@@ -1,0 +1,38 @@
+body {
+  height: 100%;
+  width: 100%;
+  background-color: #00004C !important; }
+
+.top-bar {
+  background-color: #000D20 !important;
+  color: #C0C0C0 !important; }
+  .top-bar ul {
+    background-color: #000D20 !important; }
+  .top-bar a, .top-bar a:hover {
+    color: #C0C0C0 !important; }
+
+.wrapper {
+  margin-top: 2rem;
+  background-color: #00234F;
+  min-height: 90%; }
+
+.upcoming_tournaments {
+  min-height: 300px; }
+
+.upcoming_clanwars {
+  min-height: 300px; }
+
+.login_form {
+  background-color: #000D20 !important; }
+
+.tournaments_featured, .tournaments_winners {
+  min-height: 300px; }
+
+.tournament:hover {
+  background-color: #101010;
+  color: white !important; }
+
+.tournament {
+  padding: 10px; }
+
+/*# sourceMappingURL=style.css.map */
