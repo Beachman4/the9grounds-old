@@ -2,6 +2,7 @@
 @section('content')
     <div class="row" style="margin-top: 1rem;">
         <div class="small-8 columns">
+            @if (count($tournaments) > 0)
             <div class="row small-up-1 medium-up-2 large-up-3">
                 <div class="column tournament">
                     <a href="/tournament/id"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
@@ -9,6 +10,9 @@
                     <p>Round of Tournament Rounds.</p>
                 </div>
             </div>
+            @else
+            <h1>There are no tournaments.  Create one <a href="/tournaments/create">here</a>.</h1>
+            @endif
         </div>
         <div class="small-4 columns">
             <div class="row">

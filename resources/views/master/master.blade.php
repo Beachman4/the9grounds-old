@@ -53,6 +53,7 @@
                             @endif
                         @endif
                         </li>
+                        <li><a href="/about">About</a></li>
                     </ul>
                 </div>
                 <div class="top-bar-right">
