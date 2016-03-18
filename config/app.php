@@ -159,6 +159,7 @@ return [
         App\Providers\UserServiceProvider::class,
         App\Providers\AdminServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
+        App\Providers\GlideServiceProvider::class,
 
     ],
 

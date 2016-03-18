@@ -1,5 +1,10 @@
 @extends('master.master')
 @section('content')
+    <div class="row expanded" style="border-bottom: 1px solid gray">
+        <div class="small-12 columns">
+            <h1>Tournaments</h1>
+        </div>
+    </div>
     <div class="row" style="margin-top: 1rem;">
         <div class="small-8 columns">
             @if (count($tournaments) > 0)
@@ -11,7 +16,7 @@
                 </div>
             </div>
             @else
-            <h1>There are no tournaments.  Create one <a href="/tournaments/create">here</a>.</h1>
+            <h3>There are no tournaments.  Create one <a href="/tournaments/create" class="button success tiny"><i class="fa fa-plus-circle"></i>here</a>.</h3>
             @endif
         </div>
         <div class="small-4 columns">

@@ -1,6 +1,11 @@
 <?php
 
 
+Route::get('/glide/{path}', function(League\Glide\Server $server, $path) {
+    $server->outputImage($path, $_GET);
+});
+
+
 Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']], function() {
     Route::get('/', 'BaseController@index')->name('index');
     Route::get('/login', 'UserController@getLogin')->name('login');

@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0-beta.1/themes/smoothness/jquery-ui.css">
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ URL::asset('assets/nivo/nivo.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('assets/nivo/themes/dark/dark.css') }}">
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -14,6 +15,23 @@
         <script src="{{ URL::asset('assets/nivo/nivo.js') }}"></script>
     </head>
     <body>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '533611476819746',
+                xfbml      : true,
+                version    : 'v2.5'
+            });
+        };
+
+        (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
     <style>
         .nivo-controlNav {
@@ -58,7 +76,8 @@
                 </div>
                 <div class="top-bar-right">
                     <ul class="dropdown menu" data-dropdown-menu>
-                        <li><a data-open="login_panel">Login</a></li>
+                        <li><a href="/login">Login</a></li>
+                        <li><a href="/register">Create Account</a></li>
                         <li><input type="search" placeholder="Search"></li>
                         <li><button type="submit" class="button success">Search</button></li>
                     </ul>

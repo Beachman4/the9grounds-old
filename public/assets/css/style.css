@@ -1,7 +1,12 @@
 body {
   height: 100%;
   width: 100%;
-  background-color: #00004C !important; }
+  background-color: #00004C !important;
+  font-family: 'Roboto Slab', serif; }
+
+p, h1, h2, h3, h4, h5, label, button, small, span, a {
+  font-family: 'Roboto Slab', serif !important;
+  color: #fff !important; }
 
 .top-bar {
   background-color: #000D20 !important;
@@ -17,10 +22,12 @@ body {
   min-height: 90%; }
 
 .upcoming_tournaments {
-  min-height: 300px; }
+  min-height: 300px;
+  text-align: right; }
 
 .upcoming_clanwars {
-  min-height: 300px; }
+  min-height: 300px;
+  text-align: right; }
 
 .login_form {
   background-color: #000D20 !important; }

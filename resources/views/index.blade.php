@@ -5,19 +5,19 @@
             padding: 15px;
         }
     </style>
-    <div class="row">
+    <!--<div class="row">
         <div class="small-4 medium-8 large-12 columns">
             <div class="slider-wrapper theme-dark">
                 <div class="ribbon">
                     <div class="nivoSlider" id="slider">
-                        <img src="http://placehold.it/1170x320">
-                        <img src="http://placehold.it/1170x320">
-                        <img src="http://placehold.it/1170x320">
+                        <img src="/glide/image1.jpg?w=1170&h=320&fit=contain">
+                        <img src="/glide/image2.jpg?w=1170&h=320&fit=contain">
+                        <img src="/glide/image3.jpg?w=1170&h=320&fit=contain">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <div class="row">
         <div class="small-6 columns">
             <h1>News</h1>
