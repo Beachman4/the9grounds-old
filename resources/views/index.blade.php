@@ -21,6 +21,7 @@
     <div class="row">
         <div class="small-6 columns">
             <h1>News</h1>
+            <h4>WE ARE CURRENTLY STILL IN DEVELOPMENT!</h4>
         </div>
         <div class="small-6 columns">
             <div class="row">

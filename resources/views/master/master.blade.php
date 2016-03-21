@@ -97,6 +97,18 @@
                 </button>
             </div>
         @endif
+        @if (isset($notification))
+            @if (count($notification) > 0)
+                <div class="callout large" data-closable>
+                    @foreach ($notification as $message)
+                        <p style="color: black !important;">{{ $message }}</p>
+                    @endforeach
+                    <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            @endif
+        @endif
         <div class="row wrapper">
             <div class="small-12 columns">
                 @yield('content')

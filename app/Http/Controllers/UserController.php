@@ -69,24 +69,20 @@ class UserController extends Controller
         }
 
         if ($_SERVER['REMOTE_ADDR'] != '::1') {
-            $json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR']), true);
-            if ($json['success'] == false) {
+            /*$json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR']), true);*/
+                $url = "https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR'];
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+            curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+            $curlData = curl_exec($curl);
+            curl_close($curl);
+            if (!$curlData) {
                 session()->flash('notification', 'Please Complete the Captcha');
                 return redirect()->route('register');
             }
         }
-
-
-
-        /*$url = "https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR'];
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 10);
-        curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
-        $curlData = curl_exec($curl);
-        curl_close($curl);
-        dd($curlData);*/
 
         if ($user = Users::register($request)) {
             Mail::send('email.registered', ['user' => $user], function($m) use ($user) {
@@ -94,7 +90,8 @@ class UserController extends Controller
 
                 $m->to($user->email)->subject('Confirm your account');
             });
-            return view('user.registered');
+            //return view('user.registered');
+            return redirect()->route('index');
         }
 
         Session::flash('notification', 'Something went wrong');
