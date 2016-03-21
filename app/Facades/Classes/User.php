@@ -25,7 +25,10 @@ class User
     }
     public static function isSignedIn()
     {
-        return Session::has(self::$session_id);
+        if (Session::has(self::$session_id)) {
+            return true;
+        }
+        return false;
     }
 
     public static function Get()

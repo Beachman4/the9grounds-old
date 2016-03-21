@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Users;
 use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Mail;
@@ -21,7 +19,7 @@ class UserController extends Controller
     public function postLogin(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'email_username'    =>  'required',
+            'username_email'    =>  'required',
             'password'  =>  'required'
         ]);
 
@@ -36,6 +34,14 @@ class UserController extends Controller
         return redirect()->back()->withInput();
 
 
+    }
+
+    public function confirmAccount($token)
+    {
+        $user = Users::where('confirm_token', $token)->first();
+        $user->confirmed = 1;
+        $user->save();
+        return view('user.confirmed');
     }
 
     public function getRegister()
@@ -62,8 +68,28 @@ class UserController extends Controller
             return redirect()->route('register')->withErrors($validator)->withInput();
         }
 
+        if ($_SERVER['REMOTE_ADDR'] != '::1') {
+            $json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR']), true);
+            if ($json['success'] == false) {
+                session()->flash('notification', 'Please Complete the Captcha');
+                return redirect()->route('register');
+            }
+        }
+
+
+
+        /*$url = "https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR'];
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($curl, CURLOPT_TIMEOUT, 10);
+        curl_setopt($curl, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.16) Gecko/20110319 Firefox/3.6.16");
+        $curlData = curl_exec($curl);
+        curl_close($curl);
+        dd($curlData);*/
+
         if ($user = Users::register($request)) {
-            Mail::send('emails.registered', ['user' => $user], function($m) use ($user) {
+            Mail::send('email.registered', ['user' => $user], function($m) use ($user) {
                 $m->from('the9grounds@gmail.com');
 
                 $m->to($user->email)->subject('Confirm your account');

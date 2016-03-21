@@ -76,14 +76,27 @@
                 </div>
                 <div class="top-bar-right">
                     <ul class="dropdown menu" data-dropdown-menu>
+                        @if (!$UserLogged)
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Create Account</a></li>
+                        @endif
                         <li><input type="search" placeholder="Search"></li>
                         <li><button type="submit" class="button success">Search</button></li>
                     </ul>
                 </div>
             </div>
         </form>
+
+        @if (count($errors) > 0)
+            <div class="callout large alert" data-closable>
+                @foreach ($errors->all() as $error)
+                    <p style="color: black !important;">{{ $error }}</p>
+                @endforeach
+                <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        @endif
         <div class="row wrapper">
             <div class="small-12 columns">
                 @yield('content')

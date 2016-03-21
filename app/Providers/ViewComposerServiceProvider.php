@@ -30,11 +30,16 @@ class ViewComposerServiceProvider extends ServiceProvider
 
     public function UserLogged()
     {
-        view()->share('UserLogged', User::isSignedIn());
+        view()->composer('master.master', function ($view) {
+            $view->with('UserLogged', User::isSignedIn());
+        });
+
     }
 
     public function user()
     {
-        view()->share('user', User::Get());
+        view()->composer('master.master', function ($view) {
+            $view->with('user', User::Get());
+        });
     }
 }

@@ -10,7 +10,9 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
     Route::get('/', 'BaseController@index')->name('index');
     Route::get('/login', 'UserController@getLogin')->name('login');
     Route::get('/register', 'UserController@getRegister')->name('register');
+    Route::get('/emailtest', 'UserController@testRegisterEmail');
     Route::get('/about', 'BaseController@getAbout')->name('about');
+    Route::get('/confirm/{token}', 'UserController@confirmAccount');
 
     Route::post('/register', 'UserController@postRegister');
     Route::post('/login', 'UserController@postLogin');

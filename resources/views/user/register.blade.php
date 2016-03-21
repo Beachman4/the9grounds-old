@@ -1,5 +1,6 @@
 @extends('master.master')
 @section('content')
+    <script src='https://www.google.com/recaptcha/api.js'></script>
     <div class="row expanded" style="border-bottom: 1px solid gray">
         <div class="small-12 columns">
             <h1>Create Account</h1>
@@ -35,7 +36,12 @@
                 <label>Confirm Password</label>
             </div>
             <div class="small-4 columns" style="float: left">
-                <input type="password" name="con_password" id="con_password">
+                <input type="password" name="confirm_password" id="confirm_password">
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 1rem;">
+            <div class="small-2 small-offset-4 columns">
+                <div class="g-recaptcha" data-sitekey="6LdKXBcTAAAAANxLkVZQb51c4ylW8SJNUrhlEI_I"></div>
             </div>
         </div>
         <div class="row">
@@ -46,6 +52,7 @@
                 <a href="/login" class="button">Login</a>
             </div>
         </div>
+        {{ csrf_field() }}
     </form>
     <div class="row">
         <div class="small-12 columns">
@@ -56,16 +63,20 @@
             </div>
             <div class="row" style="margin-top: 2rem;">
                 <div class="small-2 columns small-offset-2">
+                    <p>Facebook</p>
                     <div class="fb-login-button" data-max-rows="1" data-size="medium" data-show-faces="false" data-auto-logout-link="false"></div>
                 </div>
                 <div class="small-2 columns">
+                    <p>Twitter</p>
                     <a href="#"><img src="https://g.twimg.com/dev/sites/default/files/images_documentation/sign-in-with-twitter-gray.png"></a>
                 </div>
                 <div class="small-2 columns">
-
+                    <p>Battle.net</p>
+                    <a href="#"><img src="http://bnetcmsus-a.akamaihd.net/cms/blog_header/AHC770UXWJ7Z1376505580138.jpg"></a>
                 </div>
-                <div class="small-2 columns">
-
+                <div class="small-2 columns" style="float: left;">
+                    <p>Steam</p>
+                    <a href="#"><img src="http://steamcommunity-a.akamaihd.net/public/images/signinthroughsteam/sits_large_border.png"></a>
                 </div>
             </div>
         </div>
