@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use DB;
+use Mail;
 
 class BaseController extends Controller
 {
@@ -18,6 +19,12 @@ class BaseController extends Controller
                 'log'   =>  'BOTTTTTTT',
             ]);
         }
+
+        /*Mail::raw('Testing123', function ($message) {
+            $message->from('yoda@the9grounds.com');
+            $message->to('beachman19@gmail.com');
+            $message->subject('Testing');
+        });*/
 
         return view('index');
     }

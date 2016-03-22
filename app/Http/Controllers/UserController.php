@@ -86,7 +86,7 @@ class UserController extends Controller
 
         if ($user = Users::register($request)) {
             Mail::send('email.registered', ['user' => $user], function($m) use ($user) {
-                $m->from('the9grounds@gmail.com');
+                $m->from('yoda@the9grounds.com', 'The Nine Grounds');
 
                 $m->to($user->email)->subject('Confirm your account');
             });
