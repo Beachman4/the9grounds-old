@@ -46,6 +46,7 @@
             <button class="menu-icon" type="button" data-toggle></button>
             <div class="title-bar-title">Menu</div>
         </div>
+        <form method="post" action="/search">
             <div class="top-bar" id="main-menu">
                 <div class="top-bar-left">
                     <ul class="dropdown menu" data-dropdown-menu>
@@ -79,13 +80,12 @@
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Create Account</a></li>
                         @endif
-                        <form method="post" action="/search">
-                            <li><input type="search" placeholder="Search"></li>
-                            <li><button type="submit" class="button success">Search</button></li>
-                        </form>
+                        <li><input type="search" placeholder="Search"></li>
+                        <li><button type="submit" class="button success">Search</button></li>
                     </ul>
                 </div>
             </div>
+        </form>
 
         @if (count($errors) > 0)
             <div class="callout large alert" data-closable>
