@@ -44,3 +44,8 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
 .tournament {
   padding: 10px;
 }
+@media screen and (min-width: 64em) {
+  .top-bar-title {
+    margin-top: 7px !important;
+  }
+}
