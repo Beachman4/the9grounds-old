@@ -49,7 +49,7 @@
         </div>
         <form method="post" action="/search">
             <div class="top-bar" id="main-menu">
-                <div class="top-bar-title">
+                <div class="top-bar-title" style="margin-top: 7px">
                     <span data-responsive-toggle="responsive_menu" data-hide-for="medium">
                         <span class="menu-icon dark" data-toggle></span>
                     </span>
