@@ -81,8 +81,10 @@
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Create Account</a></li>
                         @endif
-                        <li><input type="search" placeholder="Search"></li>
-                        <li><button type="submit" class="button success">Search</button></li>
+                        <div class="hide-for-small-only">
+                            <li><input type="search" placeholder="Search"></li>
+                            <li><button type="submit" class="button success">Search</button></li>
+                        </div>
                     </ul>
                 </div>
             </div>
