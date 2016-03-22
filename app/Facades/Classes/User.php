@@ -23,10 +23,22 @@ class User
     {
         return Session::forget(self::$session_id);
     }
+    public static function userExist()
+    {
+        if (Users::find(Session::get(self::$session_id))) {
+            return true;
+        } else {
+            Session::forget(self::$session_id);
+            return false;
+        }
+    }
     public static function isSignedIn()
     {
         if (Session::has(self::$session_id)) {
-            return true;
+            if (self::userExist()) {
+                return true;
+            }
+            return false;
         }
         return false;
     }
