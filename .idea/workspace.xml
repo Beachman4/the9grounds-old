@@ -28,8 +28,8 @@
       <file leaf-file-name="master.blade.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/master/master.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6531532">
-              <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+            <state vertical-scroll-proportion="0.13063063">
+              <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -896,7 +896,13 @@
       <option name="project" value="LOCAL" />
       <updated>1458676079447</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="testing something">
+      <created>1458676208624</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1458676208624</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -945,7 +951,8 @@
     <MESSAGE value="ugh" />
     <MESSAGE value="Fix user exist issue" />
     <MESSAGE value="Viewport issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="Viewport issue" />
+    <MESSAGE value="testing something" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing something" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1326,8 +1333,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/master/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6531532">
-          <caret line="86" column="30" selection-start-line="86" selection-start-column="30" selection-end-line="86" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.13063063">
+          <caret line="61" column="31" selection-start-line="61" selection-start-column="31" selection-end-line="61" selection-end-column="31" />
           <folding />
         </state>
       </provider>

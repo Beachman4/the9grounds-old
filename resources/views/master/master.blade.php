@@ -49,43 +49,50 @@
         </div>
         <form method="post" action="/search">
             <div class="top-bar" id="main-menu">
-                <div class="top-bar-left">
-                    <ul class="dropdown menu" data-dropdown-menu>
-                        <li class="menu-text">The Nine Grounds</li>
-                        <li><a href="/">Home</a></li>
-                        <li>
-                            <a href="/tournaments">Tournaments</a>
-                            @if ($UserLogged)
-                                <ul class="menu">
-                                    <li><a href="/tournaments/search">Search</a></li>
-                                    <li><a href="/tournaments/create">Create</a></li>
-                                </ul>
-                            @endif
-                        </li>
-                        <li>
-                        <a href="/clans">Clans</a>
-                        @if ($UserLogged)
-                            @if ($user->clan_id)
-                                <ul class="menu">
-                                    <li><a href="#">Dashboard</a></li>
-                                </ul>
-                            @endif
-                        @endif
-                        </li>
-                        <li><a href="/about">About</a></li>
-                    </ul>
+                <div class="top-bar-title">
+                    <span data-responsive-toggle="responsive_menu" data-hide-for="medium">
+                        <span class="menu-icon dark" data-toggle></span>
+                    </span>
+                    <strong>The Nine Grounds</strong>
                 </div>
-                <div class="top-bar-right">
-                    <ul class="dropdown menu" data-dropdown-menu>
-                        @if (!$UserLogged)
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Create Account</a></li>
-                        @endif
-                        <div class="hide-for-small-only">
-                            <li><input type="search" placeholder="Search"></li>
-                            <li><button type="submit" class="button success">Search</button></li>
-                        </div>
-                    </ul>
+                <div id="responsive-menu">
+                    <div class="top-bar-left">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li><a href="/">Home</a></li>
+                            <li>
+                                <a href="/tournaments">Tournaments</a>
+                                @if ($UserLogged)
+                                    <ul class="menu vertical">
+                                        <li><a href="/tournaments/search">Search</a></li>
+                                        <li><a href="/tournaments/create">Create</a></li>
+                                    </ul>
+                                @endif
+                            </li>
+                            <li>
+                            <a href="/clans">Clans</a>
+                            @if ($UserLogged)
+                                @if ($user->clan_id)
+                                    <ul class="menu">
+                                        <li><a href="#">Dashboard</a></li>
+                                    </ul>
+                                @endif
+                            @endif
+                            </li>
+                            <li><a href="/about">About</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-bar-right">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            @if (!$UserLogged)
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/register">Create Account</a></li>
+                            @endif
+                            <div class="hide-for-small-only">
+                                <li><input type="search" placeholder="Search"></li>
+                                <li><button type="submit" class="button success">Search</button></li>
+                            </div>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </form>
