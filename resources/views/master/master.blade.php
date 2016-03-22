@@ -46,7 +46,6 @@
             <button class="menu-icon" type="button" data-toggle></button>
             <div class="title-bar-title">Menu</div>
         </div>
-        <form method="post" action="/search">
             <div class="top-bar" id="main-menu">
                 <div class="top-bar-left">
                     <ul class="dropdown menu" data-dropdown-menu>
@@ -80,12 +79,13 @@
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Create Account</a></li>
                         @endif
-                        <li><input type="search" placeholder="Search"></li>
-                        <li><button type="submit" class="button success">Search</button></li>
+                        <form method="post" action="/search">
+                            <li><input type="search" placeholder="Search"></li>
+                            <li><button type="submit" class="button success">Search</button></li>
+                        </form>
                     </ul>
                 </div>
             </div>
-        </form>
 
         @if (count($errors) > 0)
             <div class="callout large alert" data-closable>
@@ -116,96 +116,6 @@
         </div>
         <div class="footer">
 
-        </div>
-
-
-        <div class="reveal large" id="login_panel" data-reveal>
-            <form method="post" action="/login">
-                <div class="row">
-                    <div class="small-6 small-offset-3 column">
-                        <label>Username or Email
-                            <input type="text" name="username_email" id="username_email">
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-6 small-offset-3 column">
-                        <label>Password
-                            <input type="password" name="password" id="password">
-                        </label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-3 small-offset-3 columns">
-                        <a href="/forgot">Forgot Password?</a>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="small-2 small-offset-3 columns">
-                        <button type="submit" class="button success">Login</button>
-                    </div>
-                    <div class="small-3 columns" style="float:left">
-                        <a class="button" data-open="register_panel">Create Account</a>
-                    </div>
-                </div>
-                {{ csrf_field() }}
-            </form>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="reveal large" id="register_panel" data-reveal>
-            <form method="post" action="/register">
-                <div class="row">
-                    <div class="small-6 small-offset-3 columns">
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <label>Email
-                                    <input type="email" name="email" id="email">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <label>Username
-                                    <input type="text" name="username" id="username">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <label>Password
-                                    <input type="password" name="password" id="password">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="small-12 columns">
-                                <label>Confirm Password
-                                    <input type="password" name="confirm_password" id="confirm_password">
-                                </label>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="small-12 columns">
-                                {!! Recaptcha::render() !!}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="small-6 columns">
-                                <button type="submit" class="button success">Create</button>
-                            </div>
-                            <div class="small-6 columns" style="float:left">
-                                <a data-open="login_panel" class="button">Login</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{ csrf_field() }}
-            </form>
-            <button class="close-button" data-close aria-label="Close modal" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
         </div>
         <script type="text/javascript">
             $('.close_callout').click(function() {
