@@ -61,7 +61,6 @@ class UserController extends Controller
             'username'  =>  'required|unique:users,username',
             'password'  =>  'required|same:confirm_password',
             'confirm_password'  =>  'required',
-            'g-recaptcha-response' => 'required|recaptcha',
         ]);
 
         if ($validator->fails()) {
