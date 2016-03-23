@@ -126,7 +126,7 @@
         <!-- the9grounds -->
         <div class="row" style="margin-bottom: 3rem;">
             <div class="small-12 columns">
-                <ins class="adsbygoogle"
+                <ins class="adsbygoogle the9groundsad1"
                      style="display:inline-block;width:728px;height:90px; margin: 0 auto;"
                      data-ad-client="ca-pub-2570031793397892"
                      data-ad-slot="2150618848"></ins>
