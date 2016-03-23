@@ -41,12 +41,6 @@
         .theme-dark .nivo-directionNav a {
             z-index: 1;
         }
-        @media screen and (min-width: 64em) and (max-width: 74.9375em) {
-            .adsbygoogle {
-                position: relative;
-                left: 14rem;
-            }
-        }
     </style>
 
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
@@ -130,10 +124,10 @@
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- the9grounds -->
-        <div class="row" style="margin-bottom: 3rem;">
+        <div class="row" style="margin-top: 3rem; margin-bottom: 3rem;">
             <div class="small-12 columns">
                 <ins class="adsbygoogle the9groundsad1"
-                     style="display:inline-block;width:728px;height:90px; margin: 0 auto;"
+                     style="display:block;width:728px;height:90px; margin: 0 auto;"
                      data-ad-client="ca-pub-2570031793397892"
                      data-ad-slot="2150618848"></ins>
                 <script>
