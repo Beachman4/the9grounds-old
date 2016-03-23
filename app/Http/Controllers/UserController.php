@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Facades\Classes\User;
 use App\Users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -38,10 +39,13 @@ class UserController extends Controller
 
     public function confirmAccount($token)
     {
-        $user = Users::where('confirm_token', $token)->first();
-        $user->confirmed = 1;
-        $user->save();
-        return view('user.confirmed');
+
+        if ($user = Users::where('confirm_token', $token)->first()) {
+            $user->confirmed = 1;
+            $user->save();
+            return view('user.confirmed');
+        }
+        return redirect()->route('index');
     }
 
     public function getRegister()
@@ -84,7 +88,7 @@ class UserController extends Controller
         }
 
         if ($user = Users::register($request)) {
-            Mail::send('email.registered', ['user' => $user], function($m) use ($user) {
+            Mail::queue('email.registered', ['user' => $user], function($m) use ($user) {
                 $m->from('yoda@the9grounds.com', 'The Nine Grounds');
 
                 $m->to($user->email)->subject('Confirm your account');
@@ -95,5 +99,43 @@ class UserController extends Controller
 
         Session::flash('notification', 'Something went wrong');
         return redirect()->back()->withInput();
+    }
+
+    public function getForgot()
+    {
+        return view('user.forgot');
+    }
+
+    public function postForgot(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email'
+        ]);
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
+
+        if ($token = Users::forgotPass($request)) {
+            $user = Users::where('email', $request->input('email'))->first();
+            Mail::queue('email.forgot', ['user'  =>  $user, 'token'  =>  $token], function($m) use($user) {
+                $m->from('yoda@the9grounds.com', 'The Nine Grounds');
+                $m->subject('Forgot Password');
+                $m->to($user->email);
+            });
+            return view('user.doneforgot');
+        }
+        return view('user.doneforgot');
+
+    }
+
+    public function tokenForgot($token)
+    {
+
+    }
+
+    public function postTokenForgot($token, Request $request)
+    {
+
     }
 }

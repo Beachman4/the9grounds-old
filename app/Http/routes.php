@@ -13,9 +13,13 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
     Route::get('/emailtest', 'UserController@testRegisterEmail');
     Route::get('/about', 'BaseController@getAbout')->name('about');
     Route::get('/confirm/{token}', 'UserController@confirmAccount');
+    Route::get('/forgot', 'UserController@getForgot');
+    Route::get('/forgot/{token}', 'UserController@tokenForgot');
 
     Route::post('/register', 'UserController@postRegister');
     Route::post('/login', 'UserController@postLogin');
+    Route::post('/forgot', 'UserController@postForgot');
+    Route::post('/forgot/{token}', 'UserController@postTokenForgot');
 
     Route::group(['prefix'  =>  'tournaments'], function() {
         Route::get('/create', 'TournamentController@create')->name('tournaments_create');

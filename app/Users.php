@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\PasswordReset;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Hash;
@@ -43,6 +44,24 @@ class Users extends Model
         return true;
     }
 
+    public static function generateForToken()
+    {
+        $token = str_random(32);
+        if (self::checkForToken($token)) {
+            return $token;
+        } else {
+            self::generateForToken();
+        }
+    }
+
+    public static function checkForToken($token)
+    {
+        if (PasswordReset::where('token', $token)->count() > 0) {
+            return false;
+        }
+        return true;
+    }
+
 
     public static function login(Request $request)
     {
@@ -68,6 +87,19 @@ class Users extends Model
         $user->confirm_token = $token;
         if ($user->save()) {
             return $user;
+        }
+        return false;
+    }
+
+    public static function forgotPass(Request $request)
+    {
+        if ($user = self::where('email', $request->input('email'))->first()) {
+            $forgot = new PasswordReset();
+            $token = self::generateForToken();
+            $forgot->user_id = $user->id;
+            $forgot->token = $token;
+            $forgot->save();
+            return $token;
         }
         return false;
     }
