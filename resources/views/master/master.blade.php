@@ -41,6 +41,12 @@
         .theme-dark .nivo-directionNav a {
             z-index: 1;
         }
+        @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+            .adsbygoogle {
+                position: relative;
+                left: 14rem;
+            }
+        }
     </style>
 
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
