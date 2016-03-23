@@ -124,13 +124,17 @@
         </div>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- the9grounds -->
-        <ins class="adsbygoogle"
-             style="display:inline-block;width:728px;height:90px; margin-bottom: 3rem;"
-             data-ad-client="ca-pub-2570031793397892"
-             data-ad-slot="2150618848"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+        <div class="row" style="margin-bottom: 3rem;">
+            <div class="small-12 columns">
+                <ins class="adsbygoogle"
+                     style="display:inline-block;width:728px;height:90px; margin: 0 auto;"
+                     data-ad-client="ca-pub-2570031793397892"
+                     data-ad-slot="2150618848"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
+            </div>
+        </div>
 
 
         <div class="footer">
