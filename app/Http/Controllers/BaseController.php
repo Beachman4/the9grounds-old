@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendTestEmail;
+use App\Users;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -25,6 +27,12 @@ class BaseController extends Controller
             $message->to('beachman19@gmail.com');
             $message->subject('Testing');
         });*/
+        if (session()->has('user_id')) {
+            $user = Users::find(session()->get('user_id'));
+            //$this->dispatch(new SendTestEmail($user));
+            $job = (new SendTestEmail($user))->delay(60 * 2);
+            $this->dispatch($job);
+        }
 
         return view('index');
     }
