@@ -43,6 +43,15 @@ class User
         return false;
     }
 
+    public static function isAdmin()
+    {
+        $user = Users::find(session()->get(self::$session_id));
+        if ($user && $user->admin == 1) {
+            return true;
+        }
+        return false;
+    }
+
     public static function Get()
     {
         return Users::find(Session::get(self::$session_id));

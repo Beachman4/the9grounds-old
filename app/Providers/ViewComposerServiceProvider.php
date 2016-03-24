@@ -16,6 +16,7 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         $this->UserLogged();
         $this->user();
+        $this->admin();
     }
 
     /**
@@ -40,6 +41,13 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         view()->composer('master.master', function ($view) {
             $view->with('user', User::Get());
+        });
+    }
+
+    public function admin()
+    {
+        view()->composer('master.master', function ($view) {
+            $view->with('admin', User::isAdmin());
         });
     }
 }

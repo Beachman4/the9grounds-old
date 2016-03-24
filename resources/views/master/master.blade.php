@@ -48,6 +48,20 @@
             });
         </script>
         <div class="row">
+            @if ($UserLogged)
+                @if ($admin)
+                    <div class="large-3 columns">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li>
+                                <a href="#"><i class="fa fa-cogs"></i> Admin</a>
+                                <ul class="menu">
+                                    <li><a href="/news/create">Create News</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                @endif
+            @endif
             <div class="large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
                 @if ($UserLogged)
                     <script type="text/javascript">
