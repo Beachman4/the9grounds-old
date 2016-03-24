@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0-beta.1/themes/smoothness/jquery-ui.css">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="{{ URL::asset('assets/nivo/nivo.css') }}">
         <link rel="stylesheet" href="{{ URL::asset('assets/nivo/themes/dark/dark.css') }}">
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -34,29 +35,62 @@
         }(document, 'script', 'facebook-jssdk'));
     </script>
 
-    <style>
-        .nivo-controlNav {
-            z-index: 1 !important;
-        }
-        .theme-dark .nivo-directionNav a {
-            z-index: 1;
-        }
-    </style>
+        <script type="text/javascript">
+            $(function() {
+                /*
+                var height = $('.ca').height(),
+                    height2 = $('.login').height(),
+                    user_stuff = $('.user_stuff').height(),
+                    offset = user_stuff - height - 24.480,
+                    offset2 = user_stuff - height2 - 24.480;
+                $('.ca').css('margin-top', offset);
+                $('.login').css('margin-top', offset2);*/
+            });
+        </script>
+        <div class="row">
+            <div class="large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
+                @if ($UserLogged)
+                    <script type="text/javascript">
+                        $('#user_stuff').removeClass('user_stuff');
+                        $('#user_stuff').addClass('logged_user');
+                    </script>
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li>
+                            <a href="#">Hello {{ $user->username }}!</a>
+                            <ul class="menu">
+                                <li><a href="#">My Profile</a></li>
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="/logout">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                @else
+                    <div class="row expand">
+                        <div class="large-4 columns text-left">
+                            <a href="/login" class="button login">Login</a>
+                        </div>
+                        <div class="large-8 columns" style="position: relative; bottom: 0;">
+                            <a href="/register" class="button ca">Create Account</a>
+                        </div>
+                    </div>
+                @endif
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
 
-        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
-            <button class="menu-icon" type="button" data-toggle></button>
-            <div class="title-bar-title">Menu</div>
+            </div>
         </div>
         <form method="post" action="/search">
             <div class="top-bar" id="main-menu">
-                <div class="top-bar-title" style="margin-top: 7px">
+                <div class="top-bar-title text-center" style="margin-top: 7px">
                     <span data-responsive-toggle="responsive_menu" data-hide-for="medium">
                         <span class="menu-icon dark" data-toggle></span>
                     </span>
-                    <strong>The Nine Grounds</strong>
+                    <!--<strong>The Nine Grounds</strong>-->
                 </div>
                 <div id="responsive-menu">
-                    <div class="top-bar-left">
+                    <div class="top-bar-section text-center">
                         <ul class="dropdown menu" data-dropdown-menu>
                             <li><a href="/">Home</a></li>
                             <li>
@@ -81,16 +115,16 @@
                             <li><a href="/about">About</a></li>
                         </ul>
                     </div>
-                    <div class="top-bar-right">
+                    <!--<div class="top-bar-right">
                         <ul class="dropdown menu" data-dropdown-menu>
-                            @if (!$UserLogged)
+                            if (!$UserLogged)
                             <li><a href="/login">Login</a></li>
                             <li><a href="/register">Create Account</a></li>
-                            @endif
+                            endif
                             <li class="hide-for-small-only"><input type="search" placeholder="Search"></li>
                             <li class="hide-for-small-only"><button type="submit" class="button success">Search</button></li>
                         </ul>
-                    </div>
+                    </div>-->
                 </div>
             </div>
         </form>
@@ -122,6 +156,7 @@
                 @yield('content')
             </div>
         </div>
+        @if ($_SERVER['REMOTE_ADDR'] != '::1')
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- the9grounds -->
         <div class="row" style="margin-top: 3rem; margin-bottom: 3rem;">
@@ -135,6 +170,7 @@
                 </script>
             </div>
         </div>
+        @endif
 
 
         <div class="footer">

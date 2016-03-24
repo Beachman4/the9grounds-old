@@ -27,6 +27,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
         Route::get('/{id}', 'TournamentController@view')->name('tournaments_view');
     });
     Route::group(['middleware'  =>  'App\Http\Middleware\UserMiddleware'], function() {
+        Route::get('/logout', 'UserController@logout');
         Route::group(['prefix'  =>  'search'], function() {
             Route::get('/{search}', 'BaseController@search')->name('search');
 

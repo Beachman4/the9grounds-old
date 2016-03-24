@@ -1,32 +1,55 @@
 body {
   height: 100%;
   width: 100%;
-  background-color: #00004C !important;
+  //background-color: #00004C !important;
   font-family: 'Roboto Slab', serif;
 }
 p, h1, h2, h3, h4, h5, label, button, small, span, a {
-  font-family: 'Roboto Slab', serif !important;
-  color: #fff !important;
+  //font-family: 'Roboto Slab', serif !important;
+  font-family: 'Montserrat', sans-serif !important;
+  color: #00234F !important;
 }
 .top-bar {
-  background-color: #000D20 !important;
-  color: #C0C0C0 !important;
+  //background-color: #000D20 !important;
+  background-color: #e6e6e6 !important;
+  color: #00234F !important;
+  padding: 2rem !important;
   ul {
-    background-color: #000D20 !important;
+   // background-color: #000D20 !important;
+    background-color: #e6e6e6 !important;
+  }
+  a {
+    height: inherit;
   }
   a, a:hover {
-    color: #C0C0C0 !important;
+    color: #00234F !important;
+  }
+  a:hover {
+    //background-color: #999999;
   }
 }
+
 .wrapper {
   margin-top: 2rem;
-  background-color: #00234F;
+  //background-color: #00234F;
+  background-color: #e5e5e5;
   min-height: 90%;
 }
 .upcoming_tournaments {
   min-height: 300px;
   text-align: right;
 }
+.top-bar-section ul li {
+  float: none;
+  display: inline-block;
+  font-size: 20px; }
+.top-bar-title strong {
+  float: none;
+  display: inline-block;
+}
+
+.menu > li:not(.menu-text) > a {
+  padding: .7rem 1.7rem; }
 .upcoming_clanwars {
   min-height: 300px;
   text-align: right;
@@ -43,4 +66,24 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
 }
 .tournament {
   padding: 10px;
+}
+.user_stuff {
+  min-width: 15%;
+  margin-bottom: 3rem;
+  position: relative;
+  right: 30px;
+  background-color: #e6e6e6;
+  .login, .ca {
+    margin-top: 1rem;
+  }
+}
+.footer {
+  margin-top: 5rem;
+  background-color: #353535;
+  width: 100%;
+  min-height: 125px;
+}
+.logged_user {
+margin-top: 1rem;
+  margin-bottom: 1rem;
 }

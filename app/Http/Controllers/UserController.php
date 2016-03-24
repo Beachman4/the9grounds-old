@@ -101,6 +101,14 @@ class UserController extends Controller
         return redirect()->back()->withInput();
     }
 
+    public function logout()
+    {
+        if (User::signOut()) {
+            return redirect()->route('index');
+        }
+        return redirect()->route('index');
+    }
+
     public function getForgot()
     {
         return view('user.forgot');
