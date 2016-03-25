@@ -7,7 +7,7 @@
     </div>
     <form method="post">
         <div class="row" style="margin-top: 3rem;">
-            <div class="small-4 small-offset-4 columns">
+            <div class="large-4 large-offset-4 columns">
                 <div class="row">
                     <div class="small-12 columns">
                         <label>Username

@@ -21,13 +21,17 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
 .wrapper {
   margin-top: 2rem;
   background-color: #e5e5e5;
-  min-height: 90%; }
+  min-height: 90%;
+  padding: 25px; }
 
 .upcoming_tournaments {
   min-height: 300px;
   text-align: right; }
 
-.top-bar-section ul li {
+.top-bar-left {
+  float: none !important; }
+
+.top-bar-left ul li {
   float: none;
   display: inline-block;
   font-size: 20px; }
@@ -56,15 +60,6 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
 .tournament {
   padding: 10px; }
 
-.user_stuff {
-  min-width: 15%;
-  margin-bottom: 3rem;
-  position: relative;
-  right: 30px;
-  background-color: #e6e6e6; }
-  .user_stuff .login, .user_stuff .ca {
-    margin-top: 1rem; }
-
 .footer {
   margin-top: 5rem;
   background-color: #353535;
@@ -74,5 +69,24 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
 .logged_user {
   margin-top: 1rem;
   margin-bottom: 1rem; }
+
+@media screen and (max-width: 39.9375em) {
+  .other_services {
+    text-align: center; }
+
+  .login_button {
+    text-align: right !important; }
+
+  .register_button {
+    text-align: left !important; } }
+@media screen and (min-width: 40em) {
+  .user_stuff {
+    min-width: 15%;
+    margin-bottom: 3rem;
+    position: relative;
+    right: 30px;
+    background-color: #e6e6e6; }
+    .user_stuff .login, .user_stuff .ca {
+      margin-top: 1rem; } }
 
 /*# sourceMappingURL=style.css.map */

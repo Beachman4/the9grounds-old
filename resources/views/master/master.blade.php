@@ -48,21 +48,7 @@
             });
         </script>
         <div class="row">
-            @if ($UserLogged)
-                @if ($admin)
-                    <div class="large-3 columns">
-                        <ul class="dropdown menu" data-dropdown-menu>
-                            <li>
-                                <a href="#"><i class="fa fa-cogs"></i> Admin</a>
-                                <ul class="menu">
-                                    <li><a href="/news/create">Create News</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                @endif
-            @endif
-            <div class="large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
+            <div class="small-6 large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
                 @if ($UserLogged)
                     <script type="text/javascript">
                         $('#user_stuff').removeClass('user_stuff');
@@ -79,32 +65,46 @@
                         </li>
                     </ul>
                 @else
-                    <div class="row expand">
-                        <div class="large-4 columns text-left">
+                    <div class="row">
+                        <div class="small-4 large-4 columns login_button text-left">
                             <a href="/login" class="button login">Login</a>
                         </div>
-                        <div class="large-8 columns" style="position: relative; bottom: 0;">
+                        <div class="small-8 large-8 columns register_button" style="position: relative; bottom: 0;">
                             <a href="/register" class="button ca">Create Account</a>
                         </div>
                     </div>
                 @endif
             </div>
+            @if ($UserLogged)
+                @if ($admin)
+                    <div class="small-12 large-3 columns">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li>
+                                <a href="#"><i class="fa fa-cogs"></i> Admin</a>
+                                <ul class="menu">
+                                    <li><a href="/news/create">Create News</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                @endif
+            @endif
         </div>
         <div class="row">
             <div class="large-12 columns">
 
             </div>
         </div>
+        <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+            <button class="menu-icon" type="button" data-toggle></button>
+            <div class="title-bar-title">Menu</div>
+            </div>
+        </div>
         <form method="post" action="/search">
             <div class="top-bar" id="main-menu">
-                <div class="top-bar-title text-center" style="margin-top: 7px">
-                    <span data-responsive-toggle="responsive_menu" data-hide-for="medium">
-                        <span class="menu-icon dark" data-toggle></span>
-                    </span>
-                    <!--<strong>The Nine Grounds</strong>-->
-                </div>
+
                 <div id="responsive-menu">
-                    <div class="top-bar-section text-center">
+                    <div class="top-bar-left text-center">
                         <ul class="dropdown menu" data-dropdown-menu>
                             <li><a href="/">Home</a></li>
                             <li>
