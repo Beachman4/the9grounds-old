@@ -31,7 +31,7 @@ class BaseController extends Controller
         if (session()->has('user_id')) {
             $user = Users::find(session()->get('user_id'));
             //$this->dispatch(new SendTestEmail($user));
-            $time = Carbon::now()->addWeek()->timestamp;
+            $time = Carbon::now()->addWeek()->timestamp - Carbon::now()->timestamp;
             $job = (new SendTestEmail($user))->delay($time);
             $this->dispatch($job);
         }
