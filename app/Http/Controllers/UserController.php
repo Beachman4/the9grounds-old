@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Facades\Classes\User;
+use User;
 use App\Users;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Mail;
+use Session;
 
 class UserController extends Controller
 {
@@ -27,11 +28,15 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect()->route('login')->withErrors($validator)->withInput();
         }
-        if (Users::login($request)) {
-            return redirect()->route('index');
+        if ($user = Users::login($request)) {
+            if ($user->confirmed == 1) {
+                return redirect()->route('index');
+            } else {
+                return view('user.notconfirmed');
+            }
         }
 
-        Session::flash('notification', 'Something went wrong');
+        Session::flash('notification', 'Invalid Username/Password');
         return redirect()->back()->withInput();
 
 
@@ -137,6 +142,7 @@ class UserController extends Controller
 
     }
 
+    // TODO: Change password GET and POST
     public function tokenForgot($token)
     {
 
@@ -144,6 +150,20 @@ class UserController extends Controller
 
     public function postTokenForgot($token, Request $request)
     {
+
+    }
+
+    public function resendConfirmation()
+    {
+        $user = User::Get();
+
+        Mail::queue('email.registered', ['user' => $user], function($m) use ($user) {
+            $m->from('yoda@the9grounds.com', 'The Nine Grounds');
+
+            $m->to($user->email)->subject('Confirm your account');
+        });
+
+        return redirect()->route('index');
 
     }
 }

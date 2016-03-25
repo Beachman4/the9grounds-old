@@ -48,7 +48,21 @@
             });
         </script>
         <div class="row">
-            <div class="small-6 large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
+            @if ($UserLogged)
+                @if ($admin)
+                    <div class="small-12 medium-7 large-3 columns">
+                        <ul class="dropdown menu" data-dropdown-menu>
+                            <li>
+                                <a href="#"><i class="fa fa-cogs"></i> Admin</a>
+                                <ul class="menu">
+                                    <li><a href="/news/create">Create News</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                @endif
+            @endif
+            <div class="small-10 medium-5 large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
                 @if ($UserLogged)
                     <script type="text/javascript">
                         $('#user_stuff').removeClass('user_stuff');
@@ -75,20 +89,6 @@
                     </div>
                 @endif
             </div>
-            @if ($UserLogged)
-                @if ($admin)
-                    <div class="small-12 large-3 columns">
-                        <ul class="dropdown menu" data-dropdown-menu>
-                            <li>
-                                <a href="#"><i class="fa fa-cogs"></i> Admin</a>
-                                <ul class="menu">
-                                    <li><a href="/news/create">Create News</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                @endif
-            @endif
         </div>
         <div class="row">
             <div class="large-12 columns">

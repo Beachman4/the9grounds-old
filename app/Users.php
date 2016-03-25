@@ -68,7 +68,7 @@ class Users extends Model
         if ($user = self::where('username', $request->input('username_email'))->orWhere('email', $request->input('username_email'))->first()) {
             if (Hash::check($request->input('password'), $user->password)) {
                 User::signUserIn($user->id);
-                return true;
+                return $user;
             } else {
                 return false;
             }

@@ -77,10 +77,6 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
   width: 100%;
   min-height: 125px;
 }
-.logged_user {
-margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 //SMALL ONLY
 @media screen and (max-width: 39.9375em) {
   .other_services {
@@ -95,6 +91,15 @@ margin-top: 1rem;
 }
 //MEDIUM AND UP
 @media screen and (min-width: 40em) {
+
+}
+//MEDIUM ONLY
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+  .register_button {
+    text-align: left !important;
+  }
+}
+@media screen and (min-width: 64em) {
   .user_stuff {
     min-width: 15%;
     margin-bottom: 3rem;
@@ -104,5 +109,9 @@ margin-top: 1rem;
     .login, .ca {
       margin-top: 1rem;
     }
+  }
+  .logged_user {
+    //margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 }
