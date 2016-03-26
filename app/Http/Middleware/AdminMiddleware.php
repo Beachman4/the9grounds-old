@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use User;
 
 class AdminMiddleware
 {
@@ -15,6 +16,9 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (User::Get()->admin == 1) {
+            return $next($request);
+        }
+        return redirect()->back();
     }
 }

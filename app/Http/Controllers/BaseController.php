@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use Carbon\Carbon;
 use App\Jobs\SendTestEmail;
 use App\Users;
@@ -36,7 +37,11 @@ class BaseController extends Controller
             $this->dispatch($job);
         }*/
 
-        return view('index');
+        $news = News::where('hidden', 0)->paginate(3);
+
+        return view('index', [
+            'news'  =>  $news
+        ]);
     }
 
     public function getAbout()

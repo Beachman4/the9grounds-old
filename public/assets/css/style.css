@@ -25,8 +25,7 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
   padding: 25px; }
 
 .upcoming_tournaments {
-  min-height: 300px;
-  text-align: right; }
+  min-height: 300px; }
 
 .top-bar-left {
   float: none !important; }
@@ -44,8 +43,7 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
   padding: .7rem 1.7rem; }
 
 .upcoming_clanwars {
-  min-height: 300px;
-  text-align: right; }
+  min-height: 300px; }
 
 .login_form {
   background-color: #000D20 !important; }

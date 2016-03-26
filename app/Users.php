@@ -7,9 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
 use Hash;
 use User;
+use Laravel\Cashier\Billable;
 
 class Users extends Model
 {
+
+    use Billable;
 
     protected $table = 'users';
     /**

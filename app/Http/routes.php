@@ -41,4 +41,12 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
             Route::get('/', 'ClanController@index')->name('clan_index');
         });
     });
+    Route::group(['middleware'  =>  'App\Http\Middleware\AdminMiddleware'], function() {
+        Route::group(['prefix'  =>  'news'], function() {
+            Route::get('/create', 'NewsController@create');
+
+
+            Route::post('/create', 'NewsController@submit');
+        });
+    });
 });

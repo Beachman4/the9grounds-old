@@ -155,7 +155,7 @@
         @endif
         @if (isset($notification))
             @if (count($notification) > 0)
-                <div class="callout large" data-closable>
+                <div class="callout primary large" data-closable>
                     @foreach ($notification as $message)
                         <p style="color: black !important;">{{ $message }}</p>
                     @endforeach
