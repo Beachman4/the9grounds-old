@@ -76,6 +76,18 @@ class Users extends Model
             return false;
         }
     }
+    public static function androidLogin(Request $request)
+    {
+        if ($user = self::where('username', $request->input('username_email'))->orWhere('email', $request->input('username_email'))->first()) {
+            if (Hash::check($request->input('password'), $user->password)) {
+                return $user;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 
     public static function register(Request $request)
     {

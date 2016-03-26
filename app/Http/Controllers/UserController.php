@@ -41,6 +41,32 @@ class UserController extends Controller
 
 
     }
+    public function postAndroidLogin(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'username_email'    =>  'required',
+            'password'  =>  'required'
+        ]);
+
+        if ($validator->fails()) {
+            $message = 'Please complete all fields';
+            die(json_encode($message));
+        }
+        if ($user = Users::androidLogin($request)) {
+            if ($user->confirmed == 1) {
+                $message = 'Login Successful';
+                die(json_encode($message));
+            } else {
+                $message = 'You have not confirmed your account';
+                die(json_encode($message));
+            }
+        }
+
+        $message = 'Invalid Username/Password';
+        die(json_encode($message));
+
+
+    }
 
     public function confirmAccount($token)
     {

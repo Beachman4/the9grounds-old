@@ -18,6 +18,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
 
     Route::post('/register', 'UserController@postRegister');
     Route::post('/login', 'UserController@postLogin');
+    Route::post('/androidLogin', 'UserController@postAndroidLogin');
     Route::post('/forgot', 'UserController@postForgot');
     Route::post('/forgot/{token}', 'UserController@postTokenForgot');
 
