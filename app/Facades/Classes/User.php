@@ -56,7 +56,10 @@ class User
             }
             $ips = explode(',', $user->admin_ips);
             if (in_array($_SERVER['REMOTE_ADDR'], $ips)) {
-                return true;
+                if ($user->admin == 1) {
+                    return true;
+                }
+                return false;
             }
             return false;
         }
