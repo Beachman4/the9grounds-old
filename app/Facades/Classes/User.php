@@ -54,7 +54,8 @@ class User
             if ($user->admin_ips == 'ALL') {
                 return true;
             }
-            $ips = explode(',', $user->admin_ips);
+            $filtered = str_replace(' ', '', $user->admin_ips);
+            $ips = explode(',', $filtered);
             if (in_array($_SERVER['REMOTE_ADDR'], $ips)) {
                 if ($user->admin == 1) {
                     return true;
