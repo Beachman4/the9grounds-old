@@ -33,8 +33,8 @@ class AdminController extends Controller
             Carbon::now()->subDays(6)->format('n/j')
         ];
         $data_array = array();
-        $test = Users::where('created_at', '>', Carbon::now()->subDay())->where('created_at', '<', $today)->count();
-        $test2 = Users::where('created_at', '>', $today)->where('created_at', '<', $yesterday)->count();
+        $test = Users::where('created_at', '>', Carbon::now()->yesterday())->where('created_at', '<', Carbon::now())->count();
+        $test2 = Users::where('created_at', '>', Carbon::now()->subDays(2))->where('created_at', '<', Carbon::now()->yesterday())->count();
         array_push($data_array, $test);
         array_push($data_array, $test2);
         for($i = 3; $i <= 7; $i++) {
