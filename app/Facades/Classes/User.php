@@ -45,9 +45,20 @@ class User
 
     public static function isAdmin()
     {
-        $user = Users::find(session()->get(self::$session_id));
-        if ($user && $user->admin == 1) {
-            return true;
+        if (self::isSignedIn()) {
+            $user = self::Get();
+            /*if ($user && $user->admin == 1) {
+                return true;
+            }
+            return false;*/
+            if ($user->admin_ips == 'ALL') {
+                return true;
+            }
+            $ips = explode(',', $user->admin_ips);
+            if (in_array($_SERVER['REMOTE_ADDR'], $ips)) {
+                return true;
+            }
+            return false;
         }
         return false;
     }

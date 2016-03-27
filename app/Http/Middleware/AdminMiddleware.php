@@ -16,7 +16,7 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        if (User::Get()->admin == 1) {
+        if (User::isAdmin()) {
             return $next($request);
         }
         return redirect()->back();

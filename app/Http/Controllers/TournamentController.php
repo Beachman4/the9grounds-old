@@ -27,4 +27,9 @@ class TournamentController extends Controller
     {
         return view('tournament.create');
     }
+
+    public function adminIndex()
+    {
+
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use User;
+use Admin;
 
 class ViewComposerServiceProvider extends ServiceProvider
 {
@@ -17,6 +18,7 @@ class ViewComposerServiceProvider extends ServiceProvider
         $this->UserLogged();
         $this->user();
         $this->admin();
+        $this->admin_stuff();
     }
 
     /**
@@ -48,6 +50,13 @@ class ViewComposerServiceProvider extends ServiceProvider
     {
         view()->composer('master.master', function ($view) {
             $view->with('admin', User::isAdmin());
+        });
+    }
+
+    public function admin_stuff()
+    {
+        view()->composer('master.admin', function ($view) {
+            $view->with('title', Admin::getTitle())->with('buttons', Admin::getButtons());
         });
     }
 }

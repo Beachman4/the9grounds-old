@@ -13,4 +13,9 @@ class ClanController extends Controller
     {
         return view('clans.index');
     }
+
+    public function adminIndex()
+    {
+
+    }
 }

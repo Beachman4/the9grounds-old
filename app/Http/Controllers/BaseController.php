@@ -10,8 +10,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use DB;
 use Mail;
+use User;
+use DB;
 
 class BaseController extends Controller
 {
@@ -23,24 +24,12 @@ class BaseController extends Controller
                 'log'   =>  'BOTTTTTTT',
             ]);
         }
-
-        /*Mail::raw('Testing123', function ($message) {
-            $message->from('yoda@the9grounds.com');
-            $message->to('beachman19@gmail.com');
-            $message->subject('Testing');
-        });*/
-        /*if (session()->has('user_id')) {
-            $user = Users::find(session()->get('user_id'));
-            //$this->dispatch(new SendTestEmail($user));
-            $time = Carbon::now()->addWeek()->timestamp - Carbon::now()->timestamp;
-            $job = (new SendTestEmail($user))->delay($time);
-            $this->dispatch($job);
-        }*/
+        $user = User::Get();
 
         $news = News::where('hidden', 0)->paginate(3);
-
         return view('index', [
-            'news'  =>  $news
+            'news'  =>  $news,
+            'user'  =>  $user
         ]);
     }
 

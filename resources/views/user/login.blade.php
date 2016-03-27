@@ -39,4 +39,9 @@
         </div>
         {{ csrf_field() }}
     </form>
+    <script type="text/javascript">
+        $(function() {
+            $('#username_email').focus();
+        });
+    </script>
 @stop

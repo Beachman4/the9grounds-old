@@ -55,6 +55,7 @@
                             <li>
                                 <a href="#"><i class="fa fa-cogs"></i> Admin</a>
                                 <ul class="menu">
+                                    <li><a href="/admin">Admin Panel</a></li>
                                     <li><a href="/news/create">Create News</a></li>
                                 </ul>
                             </li>
@@ -88,11 +89,6 @@
                         </div>
                     </div>
                 @endif
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-
             </div>
         </div>
         <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">

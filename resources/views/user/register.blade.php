@@ -81,4 +81,9 @@
             </div>
         </div>
     </div>
+    <script>
+        $(function() {
+            $('#username').focus();
+        });
+    </script>
 @stop

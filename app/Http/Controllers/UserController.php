@@ -192,4 +192,9 @@ class UserController extends Controller
         return redirect()->route('index');
 
     }
+
+    public function adminIndex()
+    {
+
+    }
 }

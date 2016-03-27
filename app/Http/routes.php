@@ -49,4 +49,17 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
             Route::post('/create', 'NewsController@submit');
         });
     });
+    Route::group(['prefix'  =>  'admin', 'middleware'   =>  'App\Http\Middleware\AdminMiddleware'], function() {
+        Route::get('/', 'AdminController@index')->name('admin_index');
+
+        Route::group(['prefix'  =>  'user'], function() {
+            Route::get('/', 'UserController@adminIndex')->name('user-list');
+        });
+        Route::group(['prefix'  =>  'clan'], function() {
+            Route::get('/', 'ClanController@adminIndex')->name('clan-list');
+        });
+        Route::group(['prefix'  =>  'tournaments'], function() {
+            Route::get('/', 'TournamentController@adminIndex')->name('tournament-index');
+        });
+    });
 });

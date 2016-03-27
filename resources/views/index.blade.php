@@ -37,10 +37,10 @@
         </div>
     </div>
     <div class="row" style="margin-top: 3rem;">
-        <div class="small-6 columns upcoming_tournaments">
+        <div class="small-6 columns text-center upcoming_tournaments">
             <h3>Upcoming Tournaments</h3>
         </div>
-        <div class="small-6 columns upcoming_clanwars">
+        <div class="small-6 columns text-center upcoming_clanwars">
             <h3>Upcoming Clan Wars</h3>
         </div>
     </div>
