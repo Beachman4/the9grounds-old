@@ -62,7 +62,7 @@ class AdminController extends Controller
             'user_data' =>  array_reverse($data_array),
             'user_date' =>  array_reverse($date_array),
             'ram'   =>  $ram,
-            'cpu'   =>  $cpu
+            'cpu'   =>  $cpu[0]
         ]);
     }
 }
