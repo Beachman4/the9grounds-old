@@ -42,10 +42,27 @@ class AdminController extends Controller
             array_push($data_array, $test);
         }
         //dd($data_array);
+        $ram = 'Windows';
+        $cpu = 'Windows';
+        $os = php_uname();
+        if (strpos($os, "Windows") === false) {
+            $free = shell_exec('free');
+            $free = (string) trim($free);
+            $free_arr = explode("\n", $free);
+            $mem = explode(" ", $free_arr[1]);
+            $mem = array_filter($mem);
+            $mem = array_merge($mem);
+            $ram = $mem[2] / $mem[1] * 100;
+
+            $cpu = sys_getloadavg();
+        }
+
         Admin::title('Dashboard');
         return view('admin.index', [
             'user_data' =>  array_reverse($data_array),
-            'user_date' =>  array_reverse($date_array)
+            'user_date' =>  array_reverse($date_array),
+            'ram'   =>  $ram,
+            'cpu'   =>  $cpu
         ]);
     }
 }
