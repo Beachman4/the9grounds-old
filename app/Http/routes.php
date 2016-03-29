@@ -5,6 +5,9 @@ Route::get('/glide/{path}', function(League\Glide\Server $server, $path) {
     $server->outputImage($path, $_GET);
 });
 
+Route::get('/test', 'UserController@testing');
+Route::post('/test', 'UserController@postTest');
+
 
 Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']], function() {
     Route::get('/', 'BaseController@index')->name('index');
@@ -54,6 +57,12 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
 
         Route::group(['prefix'  =>  'user'], function() {
             Route::get('/', 'UserController@adminIndex')->name('user-list');
+            Route::get('/{id}', 'UserController@adminView')->name('user-view');
+            Route::get('/add', 'UserController@adminAdd')->name('user-add');
+            Route::get('/{id}/edit', 'UserController@adminEdit')->name('user-add');
+
+            Route::post('/{id}/edit', 'UserController@adminPostEdit');
+            Route::post('/add', 'UserController@adminPostAdd');
         });
         Route::group(['prefix'  =>  'clan'], function() {
             Route::get('/', 'ClanController@adminIndex')->name('clan-list');

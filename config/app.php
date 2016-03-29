@@ -160,6 +160,7 @@ return [
         App\Providers\AdminServiceProvider::class,
         App\Providers\ViewComposerServiceProvider::class,
         App\Providers\GlideServiceProvider::class,
+        Laravel\Cashier\CashierServiceProvider::class,
 
     ],
 

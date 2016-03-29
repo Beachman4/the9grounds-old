@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Validator;
 use Mail;
 use Session;
+use Admin;
 
 class UserController extends Controller
 {
@@ -24,6 +25,7 @@ class UserController extends Controller
             'username_email'    =>  'required',
             'password'  =>  'required'
         ]);
+
 
         if ($validator->fails()) {
             return redirect()->route('login')->withErrors($validator)->withInput();
@@ -194,6 +196,27 @@ class UserController extends Controller
     }
 
     public function adminIndex()
+    {
+        Admin::title('Users');
+        Admin::button('Add User', '/webadmin/user/add');
+        if (request()->input('search')) {
+            $users = Users::where('username', 'LIKE', '%'.request()->input('search').'%')->orWhere('email', 'LIKE', '%'.request()->input('search').'%')->paginate(10);
+        } else {
+            $users = Users::paginate(15);
+        }
+        return view('user.admin.index', [
+            'users' =>  $users
+        ]);
+    }
+
+    public function testing()
+    {
+        $token = 'tok_17uWQvHNkmMm0m3SNPEqWY7E';
+        $user = Users::find(1);
+        $user->newSubscription('main', 'monthly')->create($token);
+        //return view('test');
+    }
+    public function postTest(Request $request)
     {
 
     }

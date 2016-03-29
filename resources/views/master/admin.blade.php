@@ -61,7 +61,7 @@
                             <li><a href="{{ route('clan-list') }}"><i class="fa fa-list"></i>List</a></li>
                         </ul>
                     </li>
-                    <li><a href="/admin"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                    <li><a href="/admin"><i class="fa fa-users"></i><span>Teams</span></a></li>
                     <li><a href="/admin"><i class="fa fa-gamepad"></i><span>Games</span></a></li>
                 </ul>
             </section>
