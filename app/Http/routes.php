@@ -32,6 +32,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
     });
     Route::group(['middleware'  =>  'App\Http\Middleware\UserMiddleware'], function() {
         Route::get('/logout', 'UserController@logout');
+        Route::get('/myprofile', 'UserController@myprofile');
         Route::group(['prefix'  =>  'search'], function() {
             Route::get('/{search}', 'BaseController@search')->name('search');
 

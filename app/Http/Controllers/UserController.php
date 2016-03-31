@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\PasswordReset;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use User;
 use App\Users;
 use Illuminate\Http\Request;
@@ -173,7 +176,22 @@ class UserController extends Controller
     // TODO: Change password GET and POST
     public function tokenForgot($token)
     {
+        try {
+            $token = PasswordReset::where('token', $token)->first();
+        } catch (ModelNotFoundException $e) {
+            //TODO THROW SOME STUFF YO
+        }
 
+        if ($user = Users::find($token->user_id)) {
+            $timetocheck = Carbon::now()->timestamp;
+            $time = strtotime($token->created_at);
+            $against = Carbon::createFromTimestamp($time)->addMinutes(15)->timestamp;
+            if ($timetocheck >= $against) {
+                session()->flash('notification', 'Please resubmit token request');
+                return redirect('/forgot');
+            }
+            return view('user.changepassforgot');
+        }
     }
 
     public function postTokenForgot($token, Request $request)
@@ -195,6 +213,11 @@ class UserController extends Controller
 
     }
 
+    public function myprofile()
+    {
+        return view('user.profile');
+    }
+
     public function adminIndex()
     {
         Admin::title('Users');
@@ -211,9 +234,21 @@ class UserController extends Controller
 
     public function testing()
     {
+
         $token = 'tok_17uWQvHNkmMm0m3SNPEqWY7E';
         $user = Users::find(1);
-        $user->newSubscription('main', 'monthly')->create($token);
+        //$user->newSubscription('main', 'premiumClan')->create();
+        $invoices = $user->invoices();
+        $invoice = $invoices[count($invoices) - 1];
+        dd($invoice);
+        /*
+         * Mail::queue('email.receipt', ['user'  =>  $user, 'invoice' =>  $invoice, 'vendor'  =>  'The Nine Grounds', 'product'   =>  'Premium Clan'], function($m) use($user) {
+            $m->from('yoda@the9grounds.com', 'The Nine Grounds');
+            $m->subject('Order Receipt');
+            $m->to($user->email);
+        });
+         */
+        //$user->charge(2000);
         //return view('test');
     }
     public function postTest(Request $request)

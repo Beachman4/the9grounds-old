@@ -1,5 +1,6 @@
 <?php
 
+\Laravel\Cashier\Billable::setStripeKey('sk_test_87cGFIWoXLA6dPpvtgxdHpYJ');
 return [
 
     /*
