@@ -28,6 +28,11 @@ class TournamentController extends Controller
         return view('tournament.create');
     }
 
+    public function test()
+    {
+        return view('tournament.test');
+    }
+
     public function adminIndex()
     {
 

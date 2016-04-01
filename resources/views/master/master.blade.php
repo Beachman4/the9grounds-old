@@ -50,7 +50,7 @@
         <div class="row">
             @if ($UserLogged)
                 @if ($admin)
-                    <div class="small-12 medium-7 large-3 columns">
+                    <div class="small-12 medium-4 large-3 columns">
                         <ul class="dropdown menu" data-dropdown-menu>
                             <li>
                                 <a href="#"><i class="fa fa-cogs"></i> Admin</a>
@@ -63,6 +63,9 @@
                     </div>
                 @endif
             @endif
+            <div class="small-12 medium-3 large-3 columns">
+                <a href="/"><img src="/image/logo.png" style="height: 100px;" /></a>
+            </div>
             <div class="small-10 medium-5 large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
                 @if ($UserLogged)
                     <script type="text/javascript">

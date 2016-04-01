@@ -30,8 +30,8 @@ class GlideServiceProvider extends ServiceProvider
             return ServerFactory::create([
                 'source'    =>  $filesystem->getDriver(),
                 'cache' =>  $filesystem->getDriver(),
-                'source_path_prefix'    =>  'images',
-                'cache_path_prefix' =>  'images/.cache',
+                'source_path_prefix'    =>  $_SERVER['DOCUMENT_ROOT'].'/assets/img/',
+                'cache_path_prefix' =>  $_SERVER['DOCUMENT_ROOT'].'/assets/img/.cache',
             ]);
         });
     }

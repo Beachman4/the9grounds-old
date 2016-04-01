@@ -24,4 +24,4 @@
         </div>
         {{ csrf_field() }}
     </form>
-@stop
+@endsection

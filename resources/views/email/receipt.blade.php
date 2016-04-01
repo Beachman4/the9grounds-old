@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+$invoices = $user->invoices();
+$invoice = $invoices[count($invoices) - 1];
+?>
 <head>
     <meta charset="utf-8">
 

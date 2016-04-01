@@ -10,4 +10,4 @@
             <h4>If that email matches an account in our database you will receive an email regarding how to reset your password.</h4>
         </div>
     </div>
-@stop
+@endsection

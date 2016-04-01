@@ -1,6 +1,10 @@
 @extends('master.master')
 @section('content')
-    <div class="row">
 
-    </div>
+
+
+
+    <script type="text/javascript">
+
+    </script>
 @endsection

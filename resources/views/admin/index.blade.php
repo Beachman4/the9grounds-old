@@ -265,4 +265,4 @@
             });
         });
     </script>
-@stop
+@endsection
