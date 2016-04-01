@@ -3,4 +3,4 @@
     <div class="row">
 
     </div>
-@endsection
+@stop

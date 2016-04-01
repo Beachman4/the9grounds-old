@@ -29,4 +29,4 @@
     <script type="text/javascript">
         CKEDITOR.replace('body');
     </script>
-@endsection
+@stop

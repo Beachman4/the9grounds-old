@@ -15,4 +15,4 @@
             <a href="/resend-confirmation" class="button success">Resend Confirm Email</a>
         </div>
     </div>
-@endsection
+@stop

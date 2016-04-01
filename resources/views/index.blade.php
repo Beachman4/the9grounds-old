@@ -75,4 +75,4 @@
             <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
         </div>
     </div>
-@endsection
+@stop

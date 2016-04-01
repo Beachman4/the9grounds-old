@@ -44,4 +44,4 @@
             $('#username_email').focus();
         });
     </script>
-@endsection
+@stop

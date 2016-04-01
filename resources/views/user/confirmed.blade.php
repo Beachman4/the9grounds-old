@@ -11,4 +11,4 @@
             <p>Please go and <a href="/login">Login</a></p>
         </div>
     </div>
-@endsection
+@stop

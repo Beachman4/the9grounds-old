@@ -86,4 +86,4 @@
             $('#username').focus();
         });
     </script>
-@endsection
+@stop
