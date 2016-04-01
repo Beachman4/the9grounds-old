@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use App\Users;
 
 class UserMiddleware
 {
@@ -15,6 +16,13 @@ class UserMiddleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if (session()->has('user_id')) {
+            if (Users::find(session()->get('user_id'))) {
+                return $next($request);
+            }
+            session()->forget('user_id');
+            return redirect('/login');
+        }
+        return redirect('/login');
     }
 }

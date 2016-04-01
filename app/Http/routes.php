@@ -33,6 +33,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
     Route::post('/forgot/{token}', 'UserController@postTokenForgot');
 
     Route::group(['prefix'  =>  'tournaments'], function() {
+        Route::get('/test', 'TournamentController@test');
         Route::get('/', 'TournamentController@index')->name('tournaments_index');
         Route::get('/{id}', 'TournamentController@view')->name('tournaments_view');
     });
@@ -46,7 +47,6 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
         });
         Route::group(['prefix'  =>  'tournaments'], function() {
             Route::get('/create', 'TournamentController@create')->name('tournaments_create');
-            Route::get('/test', 'TournamentController@test');
         });
         Route::group(['prefix'  =>  'clans'], function() {
             Route::get('/', 'ClanController@index')->name('clan_index');

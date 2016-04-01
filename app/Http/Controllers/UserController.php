@@ -235,19 +235,19 @@ class UserController extends Controller
     public function testing()
     {
 
-        $token = 'tok_17uWQvHNkmMm0m3SNPEqWY7E';
-        $user = Users::find(1);
+       /* $token = 'tok_17uWQvHNkmMm0m3SNPEqWY7E';
+        $user = Users::find(1);*/
         #$user->newSubscription('main', 'premiumClan')->create();
         #$invoices = $user->invoices();
         #$invoice = $invoices[count($invoices) - 1];
         #dd($invoice);
-        Mail::queue('email.receipt', ['user'  =>  $user, 'vendor'  =>  'The Nine Grounds', 'product'   =>  'Premium Clan'], function($m) use($user) {
+        /*Mail::queue('email.receipt', ['user'  =>  $user, 'vendor'  =>  'The Nine Grounds', 'product'   =>  'Premium Clan'], function($m) use($user) {
             $m->from('yoda@the9grounds.com', 'The Nine Grounds');
             $m->subject('Order Receipt');
             $m->to($user->email);
-        });
+        });*/
         //$user->charge(2000);
-        //return view('test');
+        return view('test');
     }
     public function postTest(Request $request)
     {
