@@ -88,7 +88,6 @@
                     scrollTop: $("#b"+(bracketCount-1)).offset().top
                 });
             }
-
             $('#add').on('click', function() {
                 var opts = parseInt(prompt('Bracket size (number of teams):',32));
 
@@ -96,6 +95,7 @@
                     getBracket(opts);
                 else
                     alert('The bracket size you specified is not currently supported.');
+
             });
 
         });
