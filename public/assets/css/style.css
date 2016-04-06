@@ -17,6 +17,8 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
     height: inherit; }
   .top-bar a, .top-bar a:hover {
     color: #00234F !important; }
+  .top-bar a:hover {
+    text-decoration: underline; }
 
 .wrapper {
   margin-top: 2rem;

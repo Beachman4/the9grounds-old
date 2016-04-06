@@ -52,7 +52,10 @@ class User
             }
             return false;*/
             if ($user->admin_ips == 'ALL') {
-                return true;
+                if ($user->admin == 1) {
+                    return true;
+                }
+                return false;
             }
             $filtered = str_replace(' ', '', $user->admin_ips);
             $ips = explode(',', $filtered);
