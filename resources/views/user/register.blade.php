@@ -1,6 +1,7 @@
 @extends('master.master')
 @section('content')
     <script src='https://www.google.com/recaptcha/api.js'></script>
+    <script src="{{ URL::asset('assets/js/pwstrength.js') }}"></script>
     <div class="row expanded" style="border-bottom: 1px solid gray">
         <div class="small-12 columns">
             <h1>Create Account</h1>
@@ -29,6 +30,7 @@
             </div>
             <div class="small-10 large-4 columns" style="float: left">
                 <input type="password" name="password" id="password">
+                <div id="messages"></div>
             </div>
         </div>
         <div class="row">
@@ -84,6 +86,15 @@
     <script>
         $(function() {
             $('#username').focus();
+            var options = {
+                onLoad: function() {
+                    //$('#messages').text('Start Typing a password');
+                },
+                onKeyUp: function (evt) {
+                    $(evt.target).pwstrength("outputErrorList");
+                }
+            };
+            $('#password').pwstrength(options);
         });
     </script>
 @stop

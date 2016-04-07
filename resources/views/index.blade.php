@@ -4,6 +4,9 @@
         .theme-dark.slider-wrapper {
             padding: 15px;
         }
+        p {
+            color: #404040 !important;
+        }
     </style>
     <!--<div class="row">
         <div class="small-4 medium-8 large-12 columns">
