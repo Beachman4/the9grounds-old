@@ -17,6 +17,18 @@ use Admin;
 class UserController extends Controller
 {
 
+
+    /**
+     * UserController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('App\Http\Middleware\UserMiddleware', ['only' =>  [
+            'logout',
+            'myprofile'
+        ]]);
+    }
+
     public function getLogin()
     {
         return view('user.login');
@@ -73,7 +85,7 @@ class UserController extends Controller
 
     }
 
-    public function confirmAccount($token)
+    public function getConfirmAccount($token)
     {
 
         if ($user = Users::where('confirm_token', $token)->first()) {

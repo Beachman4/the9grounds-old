@@ -9,7 +9,7 @@ use App\Http\Controllers\Controller;
 
 class ClanController extends Controller
 {
-    public function index()
+    public function getIndex()
     {
         return view('clans.index');
     }

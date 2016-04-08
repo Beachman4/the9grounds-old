@@ -118,13 +118,24 @@
                             <li>
                             <a href="/clans">Clans</a>
                             @if ($UserLogged)
+                                <ul class="menu">
                                 @if ($user->clan_id)
-                                    <ul class="menu">
-                                        <li><a href="#">Dashboard</a></li>
-                                    </ul>
+                                    <li><a href="#">Clan Dashboard</a></li>
                                 @endif
+                                    <li><a href="#">Search</a></li>
+                                    <li><a href="#">Create</a></li>
+                                </ul>
                             @endif
                             </li>
+                            @if ($UserLogged)
+                                <li>
+                                    <a href="#">Teams</a>
+                                    <ul class="menu">
+                                        <li><a href="#">Search</a></li>
+                                        <li><a href="#">Create</a></li>
+                                    </ul>
+                                </li>
+                            @endif
                             <li><a href="/about">About</a></li>
                         </ul>
                     </div>

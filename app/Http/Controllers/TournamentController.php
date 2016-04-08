@@ -7,9 +7,24 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Tournament;
+use Carbon\Carbon;
 
 class TournamentController extends Controller
 {
+
+
+    /**
+     * TournamentController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('App\Http\Middleware\UserMiddleware', ['except' => [
+            'index',
+            'show',
+            'test'
+        ]]);
+    }
+
     public function index()
     {
         $tournaments = Tournament::where('complete', 0)->get();
@@ -18,7 +33,7 @@ class TournamentController extends Controller
         ]);
     }
 
-    public function view($id)
+    public function show($id)
     {
 
     }
@@ -26,6 +41,22 @@ class TournamentController extends Controller
     public function create()
     {
         return view('tournament.create');
+    }
+
+    public function store(Request $request)
+    {
+        $date = Carbon::parse($request->input('date'));
+        dd($date);
+    }
+
+    public function edit($id)
+    {
+
+    }
+
+    public function update($id, Request $request)
+    {
+
     }
 
     public function test()

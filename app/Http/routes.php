@@ -33,29 +33,29 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
     Route::post('/forgot/{token}', 'UserController@postTokenForgot');
 
 
-    Route::group(['middleware'  =>  'App\Http\Middleware\UserMiddleware'], function() {
-        Route::get('/logout', 'UserController@logout');
-        Route::get('/myprofile', 'UserController@myprofile');
-        Route::group(['prefix'  =>  'search'], function() {
-            Route::get('/{search}', 'BaseController@search')->name('search');
+    //User Middleware in Controller
+    Route::get('/logout', 'UserController@logout');
+    Route::get('/myprofile', 'UserController@myprofile');
+    Route::group(['prefix'  =>  'search'], function() {
+        Route::get('/{search}', 'BaseController@search')->name('search');
 
-            Route::post('/', 'BaseController@postSearch');
-        });
-        Route::group(['prefix'  =>  'tournaments'], function() {
-            Route::get('/create', 'TournamentController@create')->name('tournaments_create');
-        });
-        Route::group(['prefix'  =>  'clans'], function() {
-            Route::get('/', 'ClanController@index')->name('clan_index');
-        });
+        Route::post('/', 'BaseController@postSearch');
     });
-    Route::group(['middleware'  =>  'App\Http\Middleware\AdminMiddleware'], function() {
-        Route::group(['prefix'  =>  'news'], function() {
-            Route::get('/create', 'NewsController@create');
+    #Route::group(['prefix'  =>  'tournaments'], function() {
+    #    Route::get('/test', 'TournamentController@test');
+        #Route::get('/', 'TournamentController@index')->name('tournaments_index');
+        #Route::get('/create', 'TournamentController@create')->name('tournaments_create');
+        #Route::get('/{id}', 'TournamentController@view')->name('tournaments_view');
 
-
-            Route::post('/create', 'NewsController@submit');
-        });
+        #Route::post('/create', 'TournamentController@')
+    #});
+    Route::group(['prefix'  =>  'clans'], function() {
+        Route::get('/', 'ClanController@getIndex')->name('clan_index');
     });
+    Route::group(['prefix'  =>  'teams'], function() {
+        Route::get('/', 'TeamController@index')->name('team_index');
+    });
+    Route::resource('tournaments', 'TournamentController');
     Route::group(['prefix'  =>  'admin', 'middleware'   =>  'App\Http\Middleware\AdminMiddleware'], function() {
         Route::get('/', 'AdminController@index')->name('admin_index');
 
@@ -74,8 +74,12 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
         Route::group(['prefix'  =>  'tournaments'], function() {
             Route::get('/', 'TournamentController@adminIndex')->name('tournament-index');
         });
+        Route::group(['prefix'  =>  'news'], function() {
+            Route::get('/create', 'NewsController@create');
+
+
+            Route::post('/create', 'NewsController@submit');
+        });
     });
-    Route::get('/tournaments/test', 'TournamentController@test');
-    Route::get('/tournaments/', 'TournamentController@index')->name('tournaments_index');
-    Route::get('/tournaments/{id}', 'TournamentController@view')->name('tournaments_view');
+
 });
