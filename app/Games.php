@@ -21,7 +21,7 @@ class Games extends Model
 
         $file = $request->file('picture');
         $name = explode(' ', $request->input('name'));
-        $file->move($_SERVER['DOCUMENT_ROOT'] . '/img/games/' . $name[0]);
+        $file->move($_SERVER['DOCUMENT_ROOT'] . '/assets/img/games/', $name[0]);
         $game->picture = $name[0];
 
 

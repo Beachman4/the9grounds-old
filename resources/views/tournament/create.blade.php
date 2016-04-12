@@ -78,7 +78,9 @@
             <div class="large-4 columns" style="float: left">
                 <select name="game">
                     <option>Select a Game</option>
-                    <!-- TODO: Call from Games table - List games that aren't disabled -->
+                    @foreach ($games as $game)
+                        <option value="{{ $game->id }}">{{ $game->name }}</option>
+                    @endforeach
                 </select>
             </div>
         </div>
@@ -116,7 +118,7 @@
                     <div class="large-2 columns">
                         <p>*Number of participants per group</p>
                     </div>
-                    <div class="large-4 columns" style="float: left;">
+                    <div class="large-10 columns" style="float: left;">
                         <input type="number" name="group_num_per" id="group_num_per">
                     </div>
                 </div>
@@ -124,8 +126,20 @@
                     <div class="large-2 columns">
                         <p>*Number of participants to advance</p>
                     </div>
-                    <div class="large-4 columns" style="float: left;">
+                    <div class="large-10 columns" style="float: left;">
                         <input type="number" name="group_num_adv" id="group_num_adv">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="large-2 columns">
+                        <p>*Format</p>
+                    </div>
+                    <div class="large-10 columns" style="float: left;">
+                        <select name="group_format">
+                            <option>Select a Format</option>
+                            <option value="1">Single Elimination</option>
+                            <option value="2">Double Elimination</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -148,6 +162,7 @@
                 if ($('.format').text() != '*Format') {
                     $('.format').text('*Format');
                 }
+                $('.format_group_before').first().remove();
             }
         });
         $('#type_double').change(function() {
@@ -158,6 +173,7 @@
                 if ($('.format').text() != '*Final Format') {
                     $('.format').text('*Final Format');
                 }
+                $('.format_change').parent().before($('#format_group_before').html());
             }
         });
     </script>

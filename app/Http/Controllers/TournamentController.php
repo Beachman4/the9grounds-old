@@ -40,7 +40,10 @@ class TournamentController extends Controller
 
     public function create()
     {
-        return view('tournament.create');
+        $games = \App\Games::where('disabled', '!=', 1)->get();
+        return view('tournament.create', [
+            'games' =>  $games
+        ]);
     }
 
     public function store(Request $request)

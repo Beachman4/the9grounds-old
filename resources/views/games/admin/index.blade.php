@@ -29,9 +29,9 @@
                             <tr>
                                 <td>{{ $game->id }}</td>
                                 <td>{{ $game->name }}</td>
-                                <td><img src="/image/games/{{ $game->picture }}"/></td>
+                                <td><img height="100" src="/image/games/{{ $game->picture }}"/></td>
                                 <td>{{ $game->disabled == 1 ? 'Disabled' : 'Active' }}</td>
-                                <td></td>
+                                <td><a href="/admin/games/{{ $game->id }}/edit"><i class="fa fa-pencil-square-o"></i>  Edit</a>   <a href="/admin/games/{{ $game->id }}/delete"><i class="fa fa-trash"></i>  Delete</a></td>
                             </tr>
                         @endforeach
                     </table>
