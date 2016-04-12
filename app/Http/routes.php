@@ -11,6 +11,12 @@ Route::get('/image/{name}', function($name) {
         return \Illuminate\Support\Facades\Response::download($path);
     }
 });
+Route::get('/image/games/{name}', function($name) {
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/assets/img/games/' . $name;
+    if (file_exists($path)) {
+        return \Illuminate\Support\Facades\Response::download($path);
+    }
+});
 
 Route::get('/test', 'UserController@testing');
 Route::post('/test', 'UserController@postTest');
@@ -80,6 +86,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
 
             Route::post('/create', 'NewsController@submit');
         });
+        Route::resource('games', 'GamesController');
     });
 
 });

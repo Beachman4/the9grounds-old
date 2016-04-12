@@ -62,13 +62,13 @@
                         </ul>
                     </li>
                     <li><a href="/admin"><i class="fa fa-users"></i><span>Teams</span></a></li>
-                    <li><a href="/admin"><i class="fa fa-gamepad"></i><span>Games</span></a></li>
+                    <li><a href="/admin/games"><i class="fa fa-gamepad"></i><span>Games</span></a></li>
                 </ul>
             </section>
         </aside>
         <div class="content-wrapper">
             @if ($title != '')
-                <section class="content-header">
+                <section class="content-header" style="margin-bottom: 1rem;">
                     <h1>{{ $title }}</h1>
                 </section>
             @endif
