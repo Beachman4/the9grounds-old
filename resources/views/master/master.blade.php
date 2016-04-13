@@ -63,7 +63,7 @@
                     </div>
                 @endif
             @endif
-            <div class="small-12 medium-3 large-3 columns">
+            <div class="small-12 medium-3 large-3 columns" id="logo">
                 <a href="/"><img src="/image/logo.png" style="height: 100px;" /></a>
             </div>
             <div class="small-10 medium-5 large-3 columns text-right user_stuff" id="user_stuff" style="float:right">
@@ -214,6 +214,52 @@
             });
             $('.close_battle_callout').click(function() {
                 $(this).parent().hide();
+            });
+            var mq = window.matchMedia( "(max-width: 39.9375em)" );
+            if (mq.matches) {
+                if (!$('#logo').hasClass('text-center')) {
+                    $('#logo').addClass('text-center');
+                }
+                /*if ($('#user_stuff').hasClass('text-right')) {
+                    $('#user_stuff').removeClass('text-right');
+                    if (!$('#user_stuff').hasClass('text-center')) {
+                        $('#user_stuff').addClass('text-center');
+                    }
+                }*/
+            } else {
+                if ($('#logo').hasClass('text-center')) {
+                    $('#logo').removeClass('text-center');
+                }
+                /*if ($('#user_stuff').hasClass('text-center')) {
+                    $('#user_stuff').removeClass('text-center');
+                    if (!$('#user_stuff').hasClass('text-right')) {
+                        $('#user_stuff').addClass('text-right');
+                    }
+                }*/
+            }
+            $(window).resize(function() {
+                var mq = window.matchMedia( "(max-width: 39.9375em)" );
+                if (mq.matches) {
+                    if (!$('#logo').hasClass('text-center')) {
+                        $('#logo').addClass('text-center');
+                    }
+                    /*if (!$('#user_stuff').hasClass('text-right')) {
+                        $('#user_stuff').removeClass('text-right');
+                        if (!$('#user_stuff').hasClass('text-center')) {
+                            $('#user_stuff').addClass('text-center');
+                        }
+                    }*/
+                } else {
+                    if ($('#logo').hasClass('text-center')) {
+                        $('#logo').removeClass('text-center');
+                    }
+                    /*if ($('#user_stuff').hasClass('text-center')) {
+                        $('#user_stuff').removeClass('text-center');
+                        if (!$('#user_stuff').hasClass('text-right')) {
+                            $('#user_stuff').addClass('text-right');
+                        }
+                    }*/
+                }
             });
             $(document).foundation();
         </script>

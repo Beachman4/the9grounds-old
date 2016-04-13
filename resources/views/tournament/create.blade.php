@@ -162,7 +162,9 @@
                 if ($('.format').text() != '*Format') {
                     $('.format').text('*Format');
                 }
-                $('.format_group_before').first().remove();
+                if ($('.format_group_before').length != 1) {
+                    $('.format_group_before').first().remove();
+                }
             }
         });
         $('#type_double').change(function() {
