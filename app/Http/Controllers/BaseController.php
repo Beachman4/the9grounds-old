@@ -13,6 +13,7 @@ use App\Http\Controllers\Controller;
 use Mail;
 use User;
 use DB;
+use App\Games;
 
 class BaseController extends Controller
 {
@@ -26,10 +27,13 @@ class BaseController extends Controller
         }
         $user = User::Get();
 
+        $games = Games::where('disabled', '!=', '1')->get();
+
         $news = News::where('hidden', 0)->paginate(3);
         return view('index', [
             'news'  =>  $news,
-            'user'  =>  $user
+            'user'  =>  $user,
+            'games' =>  $games
         ]);
     }
 

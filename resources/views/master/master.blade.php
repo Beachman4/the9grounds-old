@@ -181,7 +181,7 @@
             </div>
         </div>
         @if ($_SERVER['REMOTE_ADDR'] != '::1')
-        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+            <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- the9grounds -->
         <div class="row" style="margin-top: 3rem; margin-bottom: 3rem;">
             <div class="small-12 columns">
@@ -192,10 +192,8 @@
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>-->
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <!-- the9grounds2 -->
                 <ins class="adsbygoogle"
-                     style="display:block"
+                     style=""
                      data-ad-client="ca-pub-2570031793397892"
                      data-ad-slot="8124173240"
                      data-ad-format="auto"></ins>

@@ -53,29 +53,13 @@
         </div>
     </div>
     <div class="row small-up-1 medium-up-2 large-up-4" style="margin-top: 4rem;">
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
-        <div class="column">
-            <a href="#"><img src="//placehold.it/300x300" class="thumbnail" alt=""></a>
-        </div>
+        @foreach ($games as $game)
+            <div class="column">
+                <a href="/tournaments/games/{{ urlencode($game->name) }}">
+                    <img src="/image/games/{{ $game->picture }}">
+                    <p class="text-center">{{ $game->name }}</p>
+                </a>
+            </div>
+        @endforeach
     </div>
 @stop
