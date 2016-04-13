@@ -185,10 +185,20 @@
         <!-- the9grounds -->
         <div class="row" style="margin-top: 3rem; margin-bottom: 3rem;">
             <div class="small-12 columns">
-                <ins class="adsbygoogle the9groundsad1"
+                <!-- OLD<ins class="adsbygoogle the9groundsad1"
                      style="display:block;width:728px;height:90px; margin: 0 auto;"
                      data-ad-client="ca-pub-2570031793397892"
                      data-ad-slot="2150618848"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>-->
+                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+                <!-- the9grounds2 -->
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-2570031793397892"
+                     data-ad-slot="8124173240"
+                     data-ad-format="auto"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
