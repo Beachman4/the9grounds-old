@@ -1,5 +1,18 @@
 @extends('master.master')
 @section('content')
+    <style>
+        .input-group-label-for-small {
+            display: none;
+        }
+        @media screen and (max-width: 39.9375em) {
+            .input-group-label {
+                display: none;
+            }
+            .input-group-label-for-small {
+                display: block;
+            }
+        }
+    </style>
     <link rel="stylesheet" href="{{ URL::asset('assets/css/foundation-datepicker.min.css') }}"/>
     <script src="{{ URL::asset('assets/js/foundation-datepicker.min.js') }}"></script>
     <form method="POST" action="/tournaments">
@@ -17,6 +30,7 @@
             </div>
             <div class="large-6 columns" style="float: left">
                 <div class="input-group">
+                    <span class="input-group-label-for-small">the9grounds.com/tournaments/</span>
                     <span class="input-group-label">the9grounds.com/tournaments/</span>
                     <input type="text" class="input-group-field" name="slug" id="slug"> <!-- TODO: Ajax check url -->
                 </div>

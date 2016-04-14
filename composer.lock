@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9547adb6f99327cc380075d9d03e4a6f",
+    "hash": "b905ab99e5e5b5b3502a68d0461fcf24",
     "content-hash": "5ee3e372812433ac38046238637bd49e",
     "packages": [
         {
@@ -256,16 +256,16 @@
         },
         {
             "name": "guzzlehttp/psr7",
-            "version": "1.2.3",
+            "version": "1.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b"
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/2e89629ff057ebb49492ba08e6995d3a6a80021b",
-                "reference": "2e89629ff057ebb49492ba08e6995d3a6a80021b",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/31382fef2889136415751badebbd1cb022a4ed72",
+                "reference": "31382fef2889136415751badebbd1cb022a4ed72",
                 "shasum": ""
             },
             "require": {
@@ -310,7 +310,7 @@
                 "stream",
                 "uri"
             ],
-            "time": "2016-02-18 21:54:00"
+            "time": "2016-04-13 19:56:01"
         },
         {
             "name": "intervention/image",
@@ -521,16 +521,16 @@
         },
         {
             "name": "laravel/cashier",
-            "version": "v6.0.10",
+            "version": "v6.0.14",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/cashier.git",
-                "reference": "70fe6378d8d8256afe5bd01b639cb9700c07f8b4"
+                "reference": "d7e9766e20a2fc772e88d24c39c40b331c6c68e6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/cashier/zipball/70fe6378d8d8256afe5bd01b639cb9700c07f8b4",
-                "reference": "70fe6378d8d8256afe5bd01b639cb9700c07f8b4",
+                "url": "https://api.github.com/repos/laravel/cashier/zipball/d7e9766e20a2fc772e88d24c39c40b331c6c68e6",
+                "reference": "d7e9766e20a2fc772e88d24c39c40b331c6c68e6",
                 "shasum": ""
             },
             "require": {
@@ -577,20 +577,20 @@
                 "laravel",
                 "stripe"
             ],
-            "time": "2016-03-29 19:13:44"
+            "time": "2016-04-01 21:50:24"
         },
         {
             "name": "laravel/framework",
-            "version": "v5.2.27",
+            "version": "v5.2.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "ccda783ffa253ed27dd1d4b41dbbc95e76e48a2a"
+                "reference": "e3d644eb131f18c5f3d28ff7bc678bc797091f20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/ccda783ffa253ed27dd1d4b41dbbc95e76e48a2a",
-                "reference": "ccda783ffa253ed27dd1d4b41dbbc95e76e48a2a",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e3d644eb131f18c5f3d28ff7bc678bc797091f20",
+                "reference": "e3d644eb131f18c5f3d28ff7bc678bc797091f20",
                 "shasum": ""
             },
             "require": {
@@ -705,7 +705,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2016-03-29 13:32:58"
+            "time": "2016-04-03 01:43:55"
         },
         {
             "name": "league/flysystem",
@@ -938,16 +938,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.18.1",
+            "version": "1.19.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "a5f2734e8c16f3aa21b3da09715d10e15b4d2d45"
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/a5f2734e8c16f3aa21b3da09715d10e15b4d2d45",
-                "reference": "a5f2734e8c16f3aa21b3da09715d10e15b4d2d45",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/5f56ed5212dc509c8dc8caeba2715732abb32dbf",
+                "reference": "5f56ed5212dc509c8dc8caeba2715732abb32dbf",
                 "shasum": ""
             },
             "require": {
@@ -962,13 +962,13 @@
                 "doctrine/couchdb": "~1.0@dev",
                 "graylog2/gelf-php": "~1.0",
                 "jakub-onderka/php-parallel-lint": "0.9",
+                "php-amqplib/php-amqplib": "~2.4",
                 "php-console/php-console": "^3.1.3",
                 "phpunit/phpunit": "~4.5",
                 "phpunit/phpunit-mock-objects": "2.3.0",
                 "raven/raven": "^0.13",
                 "ruflin/elastica": ">=0.90 <3.0",
-                "swiftmailer/swiftmailer": "~5.3",
-                "videlalvaro/php-amqplib": "~2.4"
+                "swiftmailer/swiftmailer": "~5.3"
             },
             "suggest": {
                 "aws/aws-sdk-php": "Allow sending log messages to AWS services like DynamoDB",
@@ -977,11 +977,11 @@
                 "ext-mongo": "Allow sending log messages to a MongoDB server",
                 "graylog2/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "mongodb/mongodb": "Allow sending log messages to a MongoDB server via PHP Driver",
+                "php-amqplib/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib",
                 "php-console/php-console": "Allow sending log messages to Google Chrome",
                 "raven/raven": "Allow sending log messages to a Sentry server",
                 "rollbar/rollbar": "Allow sending log messages to Rollbar",
-                "ruflin/elastica": "Allow sending log messages to an Elastic Search server",
-                "videlalvaro/php-amqplib": "Allow sending log messages to an AMQP server using php-amqplib"
+                "ruflin/elastica": "Allow sending log messages to an Elastic Search server"
             },
             "type": "library",
             "extra": {
@@ -1012,7 +1012,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-03-13 16:08:35"
+            "time": "2016-04-12 18:29:35"
         },
         {
             "name": "mtdowling/cron-expression",
@@ -1399,16 +1399,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v3.11.0",
+            "version": "v3.12.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "830879e7984f22a9ed9085d674e5f8d5c4512fc6"
+                "reference": "869e119e6f6f1fed4b6cfb617d32bd5aee5b7c81"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/830879e7984f22a9ed9085d674e5f8d5c4512fc6",
-                "reference": "830879e7984f22a9ed9085d674e5f8d5c4512fc6",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/869e119e6f6f1fed4b6cfb617d32bd5aee5b7c81",
+                "reference": "869e119e6f6f1fed4b6cfb617d32bd5aee5b7c81",
                 "shasum": ""
             },
             "require": {
@@ -1450,7 +1450,7 @@
                 "payment processing",
                 "stripe"
             ],
-            "time": "2016-03-22 20:40:11"
+            "time": "2016-04-07 23:05:59"
         },
         {
             "name": "swiftmailer/swiftmailer",

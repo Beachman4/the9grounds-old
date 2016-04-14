@@ -1,9 +1,15 @@
 @extends('master.master')
 @section('content')
+    <?php $user = \User::Get(); ?>
     <div class="row expanded" style="border-bottom: 1px solid gray">
-        <div class="small-12 columns">
+        <div class="small-8 columns">
             <h1>Tournaments</h1>
         </div>
+        @if ($user)
+            <div class="small-4 text-right columns">
+                <a href="create" class="button">Create Tournament</a>
+            </div>
+        @endif
     </div>
     <div class="row" style="margin-top: 1rem;">
         <div class="small-8 columns">
@@ -16,7 +22,7 @@
                 </div>
             </div>
             @else
-            <h3>There are no tournaments.  Create one <a href="/tournaments/create" class="button success tiny"><i class="fa fa-plus-circle"></i>here</a>.</h3>
+            {{--<h3>There are no tournaments.  Create one <a href="/tournaments/create" class="button success tiny"><i class="fa fa-plus-circle"></i>here</a>.</h3>--}}
             @endif
         </div>
         <div class="small-4 columns">

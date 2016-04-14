@@ -1,0 +1,19 @@
+.brackets {
+  overflow: auto; }
+
+.group {
+  width: 200px; }
+
+.group_part {
+  padding: 20px;
+  background-color: slategray;
+  list-style: none; }
+  .group_part li {
+    margin: 5px;
+    background-color: darkgray; }
+
+.match_number {
+  border-left: 1px solid black;
+  text-align: right; }
+
+/*# sourceMappingURL=bracket.css.map */

@@ -18,11 +18,26 @@ class UserController extends Controller
 {
 
 
+    /*
+     * User Base Model
+     * App\Users
+     */
+    private $model_base;
+    /*
+     * Password Reset Model
+     * App\PasswordReset
+     */
+    private $model_reset;
+
     /**
      * UserController constructor.
+     * @param Users $users
+     * @param PasswordReset $passwordReset
      */
-    public function __construct()
+    public function __construct(Users $users, PasswordReset $passwordReset)
     {
+        $this->model_base = $users;
+        $this->model_reset = $passwordReset;
         $this->middleware('App\Http\Middleware\UserMiddleware', ['only' =>  [
             'logout',
             'myprofile'
@@ -45,7 +60,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect()->route('login')->withErrors($validator)->withInput();
         }
-        if ($user = Users::login($request)) {
+        if ($user = $this->model_base->login($request)) {
             if ($user->confirmed == 1) {
                 return redirect()->route('index');
             } else {
@@ -69,7 +84,7 @@ class UserController extends Controller
             $message = 'Please complete all fields';
             die(json_encode($message));
         }
-        if ($user = Users::androidLogin($request)) {
+        if ($user = $this->model_base->androidLogin($request)) {
             if ($user->confirmed == 1) {
                 $message = 'Login Successful';
                 die(json_encode($message));
@@ -88,7 +103,7 @@ class UserController extends Controller
     public function getConfirmAccount($token)
     {
 
-        if ($user = Users::where('confirm_token', $token)->first()) {
+        if ($user = $this->model_base->where('confirm_token', $token)->first()) {
             $user->confirmed = 1;
             $user->save();
             return view('user.confirmed');
@@ -135,7 +150,7 @@ class UserController extends Controller
             }
         }
 
-        if ($user = Users::register($request)) {
+        if ($user = $this->model_base->register($request)) {
             Mail::queue('email.registered', ['user' => $user], function($m) use ($user) {
                 $m->from('yoda@the9grounds.com', 'The Nine Grounds');
 
@@ -151,7 +166,7 @@ class UserController extends Controller
 
     public function logout()
     {
-        if (User::signOut()) {
+        if ($this->model_base->signOut()) {
             return redirect()->route('index');
         }
         return redirect()->route('index');
@@ -172,8 +187,8 @@ class UserController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        if ($token = Users::forgotPass($request)) {
-            $user = Users::where('email', $request->input('email'))->first();
+        if ($token = $this->model_base->forgotPass($request)) {
+            $user = $this->model_base->where('email', $request->input('email'))->first();
             Mail::queue('email.forgot', ['user'  =>  $user, 'token'  =>  $token], function($m) use($user) {
                 $m->from('yoda@the9grounds.com', 'The Nine Grounds');
                 $m->subject('Forgot Password');
@@ -189,7 +204,7 @@ class UserController extends Controller
     public function tokenForgot($token)
     {
         try {
-            $token = PasswordReset::where('token', $token)->first();
+            $token = $this->model_reset->where('token', $token)->first();
         } catch (ModelNotFoundException $e) {
             //TODO THROW SOME STUFF YO
         }

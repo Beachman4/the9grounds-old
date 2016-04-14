@@ -61,6 +61,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
     Route::group(['prefix'  =>  'teams'], function() {
         Route::get('/', 'TeamController@index')->name('team_index');
     });
+    Route::get('/tournaments/test', 'TournamentController@test');
     Route::resource('tournaments', 'TournamentController');
     Route::group(['prefix'  =>  'admin', 'middleware'   =>  'App\Http\Middleware\AdminMiddleware'], function() {
         Route::get('/', 'AdminController@index')->name('admin_index');
