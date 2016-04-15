@@ -13,7 +13,7 @@
                         CPU Usage
                     </span>
                     <span class="info-box-number">
-                        {{ var_dump($cpu) }}
+                        {{ $cpu }}
                         <small>%</small>
                     </span>
                 </div>
@@ -31,7 +31,7 @@
                         Ram Usage
                     </span>
                     <span class="info-box-number">
-                        {{ var_dump($ram) }}
+                        {{ $ram }}
                         <small>%</small>
                     </span>
                 </div>
