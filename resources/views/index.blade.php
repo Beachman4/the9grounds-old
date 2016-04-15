@@ -32,7 +32,8 @@
                 <div class="row">
                     <div class="small-12 columns">
                         <h3>{{ $article->title }}</h3>
-                        <?php echo htmlspecialchars_decode(stripslashes($article->body)); ?>
+                        <?php /*echo htmlspecialchars_decode(stripslashes($article->body));*/ ?>
+                        @html($article->body)
                     </div>
                 </div>
             @endforeach

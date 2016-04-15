@@ -122,8 +122,8 @@
                                 @if ($user->clan_id)
                                     <li><a href="#">Clan Dashboard</a></li>
                                 @endif
-                                    <li><a href="#">Search</a></li>
-                                    <li><a href="#">Create</a></li>
+                                    <li><a href="/clans/search">Search</a></li>
+                                    <li><a href="/clans/create">Create</a></li>
                                 </ul>
                             @endif
                             </li>

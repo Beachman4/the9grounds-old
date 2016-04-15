@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Blade;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->BladeDirectiveHTML();
     }
 
     /**
@@ -24,5 +25,12 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+    }
+
+    public function BladeDirectiveHTML()
+    {
+        Blade::directive('html', function ($exp) {
+            return "<?php echo htmlspecialchars_decode(stripslashes($exp)); ?>";
+        });
     }
 }

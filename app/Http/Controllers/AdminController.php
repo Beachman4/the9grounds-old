@@ -52,7 +52,7 @@ class AdminController extends Controller
             $mem = explode(" ", $free_arr[1]);
             $mem = array_filter($mem);
             $mem = array_merge($mem);
-            $ram = $mem[2] / $mem[1] * 100;
+            #$ram = $mem[2] / $mem[1] * 100;
             $test = intval($mem[3]) + (intval($mem[4]) + intval($mem[5]) + intval($mem[6]));
             $ram = ($test / intval($mem[1])) * 100;
             $ram = number_format($ram, 0);
