@@ -58,7 +58,6 @@ class AdminController extends Controller
             $ram = number_format($ram, 0);
 
             $cpu = sys_getloadavg();
-            dd($cpu);
         }
 
         Admin::title('Dashboard');
