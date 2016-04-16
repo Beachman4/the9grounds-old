@@ -58,7 +58,7 @@ class AdminController extends Controller
             $ram = number_format($ram, 0);
 
             $cpu = sys_getloadavg();
-            $cpu = $cpu * 100;
+            $cpu = $cpu[0] * 100;
         }
 
         Admin::title('Dashboard');
@@ -66,7 +66,7 @@ class AdminController extends Controller
             'user_data' =>  array_reverse($data_array),
             'user_date' =>  array_reverse($date_array),
             'ram'   =>  $ram,
-            'cpu'   =>  $cpu[0]
+            'cpu'   =>  $cpu
         ]);
     }
 }
