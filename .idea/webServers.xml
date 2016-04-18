@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="13adb166-4458-4b2e-b9c7-f48215cf5873" name="mewbourne" url="http://mewbourne.gm7site.com">
+        <fileTransfer host="mewbourne.gm7site.com" port="22" accessType="SFTP" password="df9ddf87dfe5dfe4dfefdf81dfdddfcfdfc8df81dfeddff8dfe5dfffdffadf87df9d" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="399bc8ce-d279-47ef-9080-5886245d24b3" name="the9grounds" url="http://the9grounds.com">
+        <fileTransfer host="the9grounds.com" port="22" accessType="SFTP" password="dfcbdfd8dfc6dfc3dfc4dfcddfdedfc5dfc4df98" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="341773f3-61d3-4148-958b-8d06940ad3f5" name="american" url="http://americanbakeware.com">
+        <fileTransfer host="americanbakeware.com" port="22" accessType="SFTP" password="df9ddf87dfe5dfe4dfefdf81dfdddfcfdfc8df81dfeddff8dfe5dfffdffadf87df9d" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="68417495-b75d-41e4-ab61-2727822175f1" name="secured" url="http://securedserver.net">
+        <fileTransfer host="securedserver.net" port="22" accessType="SFTP" password="df9ddf87dfe5dfe4dfefdf81dfdddfcfdfc8df81dfeddff8dfe5dfffdffadf87df9d" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

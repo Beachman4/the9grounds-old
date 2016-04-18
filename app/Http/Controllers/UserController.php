@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Events\UserHasForgot;
 use App\Events\UserWasCreated;
+use App\Http\Requests\UserCreateRequest;
 use App\PasswordReset;
 use App\Repository\UserRepository;
 use Carbon\Carbon;
@@ -33,7 +34,7 @@ class UserController extends Controller
      * @param PasswordReset $passwordReset
      * @internal param Users $users
      */
-    public function __construct(UserRepository $repository, PasswordReset $passwordReset)
+    public function __construct(UserRepository $repository)
     {
         $this->users = $repository;
         $this->middleware('App\Http\Middleware\UserMiddleware', ['only' =>  [
@@ -119,19 +120,8 @@ class UserController extends Controller
         return view('email.registered');
     }
 
-    public function postRegister(Request $request)
+    public function postRegister(UserCreateRequest $request)
     {
-        $validator = Validator::make($request->all(), [
-            'email' =>  'required|email|unique:users,email',
-            'username'  =>  'required|unique:users,username',
-            'password'  =>  'required|same:confirm_password',
-            'confirm_password'  =>  'required',
-        ]);
-
-        if ($validator->fails()) {
-            return redirect()->route('register')->withErrors($validator)->withInput();
-        }
-
         if ($_SERVER['REMOTE_ADDR'] != '::1') {
             $url = "https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR'];
             $curl = curl_init();
@@ -158,7 +148,7 @@ class UserController extends Controller
 
     public function logout()
     {
-        if ($this->users->model->signOut()) {
+        if (User::signOut()) {
             return redirect()->route('index');
         }
         return redirect()->route('index');

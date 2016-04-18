@@ -9,13 +9,11 @@
     <script src="{{ URL::asset('assets/js/TextboxList.Autocomplete.js') }}"></script>
     <form method="post" action="/clans">
         <div class="row">
-            <div class="small-12 columns">
-                <label>Clan Name
-                    <input type="text" name="name">
-                </label>
+            <div class="small-6 columns">
+                <label>Clan Name</label>
+
+                <input type="text" name="name">
             </div>
-        </div>
-        <div class="row">
             <div class="small-6 columns">
                 <label>Members</label>
                 <small>To delete a user from the list, use the arrow keys and press delete.</small>
@@ -24,6 +22,7 @@
                 </div>
             </div>
         </div>
+        {{ csrf_field() }}
     </form>
     <script>
         var t = new $.TextboxList('#members_input', {unique: true, plugins: {autocomplete: {

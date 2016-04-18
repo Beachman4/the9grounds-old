@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Requests\UserCreateRequest;
 use App\PasswordReset;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -97,7 +98,7 @@ class Users extends Model
         }
     }
 
-    public static function register(Request $request)
+    public static function register(UserCreateRequest $request)
     {
         $user = new self;
         $user->username = $request->input('username');

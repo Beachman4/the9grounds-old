@@ -22,6 +22,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserWasUpdated' => [
             'App\Listeners\SendUpdatedUserEmail',
         ],
+        'App\Events\TournamentWasCreated' => [
+            'App\Listeners\SendTournamentCreatedEmail',
+            'App\Listeners\DispatchTournamentBracketGenerator',
+        ],
     ];
 
     /**

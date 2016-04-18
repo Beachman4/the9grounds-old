@@ -6,9 +6,6 @@ use Illuminate\Console\GeneratorCommand;
 
 class RepositoryMakeCommand extends GeneratorCommand
 {
-    /*
-     * TODO: Fix this
-     */
     /**
      * The name and signature of the console command.
      *
@@ -34,6 +31,14 @@ class RepositoryMakeCommand extends GeneratorCommand
 
     public function fire()
     {
+        $model = $this->argument('model');
+        /*
+         * Update, check if model exists
+         */
+        if (!class_exists("\\App\\$model")) {
+            $this->error("That model does not exist!");
+            die();
+        }
         $name = $this->parseName($this->getNameInput());
 
         $path = $this->getPath($name);
@@ -49,7 +54,7 @@ class RepositoryMakeCommand extends GeneratorCommand
         $this->files->put($path, $this->buildClass($name));
 
         $this->info($this->type.' created successfully.');
-        exec('composer dump-autoload -o');
+        //exec('composer dump-autoload -o');
     }
 
     protected function buildClass($name)

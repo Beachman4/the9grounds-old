@@ -4,7 +4,7 @@
     var options = {
             errors: [],
             // Options
-            minChar: 8,
+            minChar: 6,
             errorMessages: {
                 password_to_short: "The Password is too short",
                 same_as_username: "Your password cannot be the same as your username"
