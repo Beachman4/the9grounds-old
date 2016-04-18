@@ -10,7 +10,8 @@
         "greggilbert/recaptcha": "^2.1",
         "league/glide": "^1.0",
         "league/glide-laravel": "^1.0",
-        "laravel/cashier": "^6.0"
+        "laravel/cashier": "^6.0",
+        "doctrine/dbal": "^2.5"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

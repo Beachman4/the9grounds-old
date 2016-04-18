@@ -49,6 +49,7 @@ class RepositoryMakeCommand extends GeneratorCommand
         $this->files->put($path, $this->buildClass($name));
 
         $this->info($this->type.' created successfully.');
+        exec('composer dump-autoload -o');
     }
 
     protected function buildClass($name)

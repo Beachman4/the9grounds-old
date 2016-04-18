@@ -9,9 +9,9 @@
 namespace App\Repository;
 
 use Illuminate\Http\Request;
+//use App\Repository\RepositoryInterface;
 
-
-abstract class Repository implements \RepositoryInterface
+abstract class Repository implements RepositoryInterface
 {
     public $model;
 
@@ -37,27 +37,32 @@ abstract class Repository implements \RepositoryInterface
     public function createOrUpdate($id = null, $request)
     {
         if (is_null($id)) {
-
+            return $this->model->create($request->all());
         }
+        return $this->find($id)->update($request->all());
     }
 
     public function find($id)
     {
-
+        return $this->model->find($id);
     }
 
     public function findBy($field, $value)
     {
-
+        return $this->where($field, $value)->first();
     }
 
     public function multiWhere($data = array())
     {
-
+        $model = $this->model();
+        foreach ($data as $field=>$value) {
+            $model->where($field, $value);
+        }
+        return $model->get();
     }
 
     public function delete($id)
     {
-
+        return $this->find($id)->delete();
     }
 }

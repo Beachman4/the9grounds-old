@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repository\UserRepository;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -18,7 +19,7 @@ class ClanController extends Controller
 
     private $model_war;
 
-    private $model_members;
+    private $users;
 
     /**
      * ClanController constructor.
@@ -26,11 +27,11 @@ class ClanController extends Controller
      * @param ClanMember $clanMember
      * @param ClanWar $clanWar
      */
-    public function __construct(Clan $clan, ClanMember $clanMember, ClanWar $clanWar)
+    public function __construct(Clan $clan, UserRepository $users, ClanWar $clanWar)
     {
         $this->model_base = $clan;
         $this->model_war = $clanWar;
-        $this->model_members = $clanMember;
+        $this->users = $users;
         $this->middleware('App\Http\Middleware\UserMiddleware', ['except' =>
             'index',
             'view',
@@ -46,7 +47,7 @@ class ClanController extends Controller
 
     public function create()
     {
-
+        return view('clans.create');
     }
 
     public function store()
@@ -77,5 +78,20 @@ class ClanController extends Controller
     public function adminIndex()
     {
 
+    }
+
+    public function getUsers()
+    {
+        $response = array();
+        $search = request()->input('search');
+        $users = $this->users->search($search);
+        foreach ($users as $user)
+        {
+            if (!preg_match("/^$search/i", $user->username)) continue;
+            $response[] = array($user->id, $user->username, null, '<img src="https://placehold.it/30x30"> ' . $user->username);
+        }
+
+        header('Content-type: application/json');
+        echo json_encode($response);
     }
 }

@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserHasForgot;
+use App\Events\UserWasCreated;
 use App\PasswordReset;
+use App\Repository\UserRepository;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use User;
@@ -19,25 +22,20 @@ class UserController extends Controller
 
 
     /*
-     * User Base Model
-     * App\Users
+     * User Repository
+     * App\Repository\UserRepository
      */
-    private $model_base;
-    /*
-     * Password Reset Model
-     * App\PasswordReset
-     */
-    private $model_reset;
+    private $users;
 
     /**
      * UserController constructor.
-     * @param Users $users
+     * @param UserRepository $repository
      * @param PasswordReset $passwordReset
+     * @internal param Users $users
      */
-    public function __construct(Users $users, PasswordReset $passwordReset)
+    public function __construct(UserRepository $repository, PasswordReset $passwordReset)
     {
-        $this->model_base = $users;
-        $this->model_reset = $passwordReset;
+        $this->users = $repository;
         $this->middleware('App\Http\Middleware\UserMiddleware', ['only' =>  [
             'logout',
             'myprofile'
@@ -60,7 +58,7 @@ class UserController extends Controller
         if ($validator->fails()) {
             return redirect()->route('login')->withErrors($validator)->withInput();
         }
-        if ($user = $this->model_base->login($request)) {
+        if ($user = $this->users->model->login($request)) {
             if ($user->confirmed == 1) {
                 return redirect()->route('index');
             } else {
@@ -84,7 +82,7 @@ class UserController extends Controller
             $message = 'Please complete all fields';
             die(json_encode($message));
         }
-        if ($user = $this->model_base->androidLogin($request)) {
+        if ($user = $this->users->model->androidLogin($request)) {
             if ($user->confirmed == 1) {
                 $message = 'Login Successful';
                 die(json_encode($message));
@@ -103,7 +101,7 @@ class UserController extends Controller
     public function getConfirmAccount($token)
     {
 
-        if ($user = $this->model_base->where('confirm_token', $token)->first()) {
+        if ($user = $this->users->findBy('confirm_token', $token)) {
             $user->confirmed = 1;
             $user->save();
             return view('user.confirmed');
@@ -135,8 +133,7 @@ class UserController extends Controller
         }
 
         if ($_SERVER['REMOTE_ADDR'] != '::1') {
-            /*$json = json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR']), true);*/
-                $url = "https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR'];
+            $url = "https://www.google.com/recaptcha/api/siteverify?secret=6LdKXBcTAAAAAJwfDO1mSJqMBQg4NtszZepJA5UC&response=" . $request->input('g-recaptcha-response') . "&remoteip=". $_SERVER['REMOTE_ADDR'];
             $curl = curl_init();
             curl_setopt($curl, CURLOPT_URL, $url);
             curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
@@ -150,13 +147,8 @@ class UserController extends Controller
             }
         }
 
-        if ($user = $this->model_base->register($request)) {
-            Mail::queue('email.registered', ['user' => $user], function($m) use ($user) {
-                $m->from('yoda@the9grounds.com', 'The Nine Grounds');
-
-                $m->to($user->email)->subject('Confirm your account');
-            });
-            //return view('user.registered');
+        if ($user = $this->users->createOrUpdate(null, $request)) {
+            event(new UserWasCreated($user));
             return redirect()->route('index');
         }
 
@@ -166,7 +158,7 @@ class UserController extends Controller
 
     public function logout()
     {
-        if ($this->model_base->signOut()) {
+        if ($this->users->model->signOut()) {
             return redirect()->route('index');
         }
         return redirect()->route('index');
@@ -187,13 +179,9 @@ class UserController extends Controller
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        if ($token = $this->model_base->forgotPass($request)) {
-            $user = $this->model_base->where('email', $request->input('email'))->first();
-            Mail::queue('email.forgot', ['user'  =>  $user, 'token'  =>  $token], function($m) use($user) {
-                $m->from('yoda@the9grounds.com', 'The Nine Grounds');
-                $m->subject('Forgot Password');
-                $m->to($user->email);
-            });
+        if ($token = $this->users->model->forgotPass($request)) {
+            $user = $this->users->findBy('email', $request->input('email'));
+            event(new UserHasForgot($user, $token));
             return view('user.doneforgot');
         }
         return view('user.doneforgot');
@@ -204,12 +192,12 @@ class UserController extends Controller
     public function tokenForgot($token)
     {
         try {
-            $token = $this->model_reset->where('token', $token)->first();
+            $token = $this->users->findResetBy("token", $token);
         } catch (ModelNotFoundException $e) {
             //TODO THROW SOME STUFF YO
         }
 
-        if ($user = Users::find($token->user_id)) {
+        if ($user = $this->users->find($token->user_id)) {
             $timetocheck = Carbon::now()->timestamp;
             $time = strtotime($token->created_at);
             $against = Carbon::createFromTimestamp($time)->addMinutes(15)->timestamp;
@@ -230,11 +218,7 @@ class UserController extends Controller
     {
         $user = User::Get();
 
-        Mail::queue('email.registered', ['user' => $user], function($m) use ($user) {
-            $m->from('yoda@the9grounds.com', 'The Nine Grounds');
-
-            $m->to($user->email)->subject('Confirm your account');
-        });
+        event(new UserWasCreated($user));
 
         return redirect()->route('index');
 
@@ -250,9 +234,9 @@ class UserController extends Controller
         Admin::title('Users');
         Admin::button('Add User', '/webadmin/user/add');
         if (request()->input('search')) {
-            $users = Users::where('username', 'LIKE', '%'.request()->input('search').'%')->orWhere('email', 'LIKE', '%'.request()->input('search').'%')->paginate(10);
+            $users = $this->users->paginateSearch(10, request()->input('search'));
         } else {
-            $users = Users::paginate(15);
+            $users = $this->users->paginate(15);
         }
         return view('user.admin.index', [
             'users' =>  $users

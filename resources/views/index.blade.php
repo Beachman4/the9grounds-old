@@ -40,14 +40,14 @@
             {!! $news->links() !!}
         </div>
     </div>
-    <div class="row" style="margin-top: 3rem;">
+    {{--<div class="row" style="margin-top: 3rem;">
         <div class="small-6 columns text-center upcoming_tournaments">
             <h3>Upcoming Tournaments</h3>
         </div>
         <div class="small-6 columns text-center upcoming_clanwars">
             <h3>Upcoming Clan Wars</h3>
         </div>
-    </div>
+    </div>--}}
     <div class="row" style="border-bottom: 1px solid gray">
         <div class="large-12 columns text-center">
             <h1>Games</h1>

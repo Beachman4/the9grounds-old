@@ -29,6 +29,11 @@ class Users extends Model
      */
     protected $hidden = [];
 
+    public function resets()
+    {
+        return $this->hasOne('App\PasswordReset');
+    }
+
     public static function generateConToken()
     {
         $token = str_random(32);
