@@ -10,6 +10,7 @@ namespace App\Tournament;
 
 
 use App\Tournament;
+use App\TournamentsGroups;
 
 class TournamentBracketGenerator
 {
@@ -35,7 +36,35 @@ class TournamentBracketGenerator
 
     private function groups()
     {
+        $participants = $this->tournament->participants()->get();
+        shuffle($participants);
+        array_splice($participants, $this->tournament->group_num);
+        foreach($participants as $group) {
+            $players = [];
+            foreach ($group as $player) {
+                array_push($players, $player->id);
+            }
+            $group = new TournamentsGroups();
+            $players = implode(',', $players);
+            $group->users = $players;
+            $group->tournament_id = $this->tournament->id;
+            $group->save();
+            $this->generateGroupMatches($group);
+        }
+    }
 
+    private function generateGroupMatches(TournamentsGroups $group)
+    {
+        $users = explode(",", $group->users);
+        for($i = 0; $i < count($users);$i++) {
+            for($j = $i+1;$j < count($users);$j++) {
+                $match = new TournamentsGroupsMatches();
+                $players = $users[$i]->id.",".$users[$j]->id;
+                $match->players = $players;
+                $match->group_id = $group->id;
+                $match->save();
+            }
+        }
     }
 
     private function brackets()

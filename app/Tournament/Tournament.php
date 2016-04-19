@@ -17,4 +17,9 @@ class Tournament extends Model
     {
         return $this->hasMany('App\TournamentsBrackets');
     }
+
+    public function groups()
+    {
+        return $this->hasMany('App\TournamentsGroups');
+    }
 }

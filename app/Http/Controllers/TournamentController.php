@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\TournamentsGroups;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -10,6 +11,7 @@ use App\Tournament;
 use App\TournamentsBrackets;
 use App\TournamentsPart;
 use Carbon\Carbon;
+use App\TournamentsGroupsMatches;
 
 class TournamentController extends Controller
 {

@@ -19,6 +19,9 @@ class ViewComposerServiceProvider extends ServiceProvider
         $this->user();
         $this->admin();
         $this->admin_stuff();
+        $this->errorAdmin();
+        $this->errorUser();
+        $this->errorUserLogged();
     }
 
     /**
@@ -49,6 +52,27 @@ class ViewComposerServiceProvider extends ServiceProvider
     public function admin()
     {
         view()->composer('master.master', function ($view) {
+            $view->with('admin', User::isAdmin());
+        });
+    }
+    public function errorUserLogged()
+    {
+        view()->composer('master.error', function ($view) {
+            $view->with('UserLogged', User::isSignedIn());
+        });
+
+    }
+
+    public function errorUser()
+    {
+        view()->composer('master.error', function ($view) {
+            $view->with('user', User::Get());
+        });
+    }
+
+    public function errorAdmin()
+    {
+        view()->composer('master.error', function ($view) {
             $view->with('admin', User::isAdmin());
         });
     }
