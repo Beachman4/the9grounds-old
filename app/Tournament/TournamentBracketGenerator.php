@@ -26,7 +26,11 @@ class TournamentBracketGenerator
 
     public function generate()
     {
-
+        if ($this->tournament->stage == 'double') {
+            $this->groups();
+        } else {
+            $this->brackets();
+        }
     }
 
     private function groups()
@@ -36,7 +40,16 @@ class TournamentBracketGenerator
 
     private function brackets()
     {
-
+        $participants = $this->tournament->participants()->get();
+        shuffle($participants);
+        array_splice($participants, 2);
+        foreach($participants as $bracket) {
+            $this->tournament->brackets()->create([
+                'player1' => $bracket[0]->id,
+                'player2' => $bracket[1]->id,
+                'result' => '0:0'
+            ]);
+        }
     }
 
 

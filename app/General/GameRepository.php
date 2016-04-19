@@ -19,6 +19,7 @@ class GameRepository extends Repository
     /*
      * Call custom Eloquent queries below
      */
+
 }
 
 

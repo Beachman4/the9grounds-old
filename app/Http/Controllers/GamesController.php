@@ -8,9 +8,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Admin;
 use Validator;
+use App\Repository\GameRepository;
 
 class GamesController extends Controller
 {
+    private $games;
+
+    /**
+     * GamesController constructor.
+     * @param $games
+     */
+    public function __construct(GameRepository $games)
+    {
+        $this->games = $games;
+    }
+
+
     public function index()
     {
         if ($search = request()->input('search')) {
@@ -37,14 +50,15 @@ class GamesController extends Controller
     }
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        /*$validator = Validator::make($request->all(), [
             'name'  =>  'required'
             //'picture'   =>  'required'
-        ]);
+        ]);*/
 
-        if ($validator->fails()) {
+        /*if ($validator->fails()) {
             return redirect()->back()->withErrors($validator)->withInput();
-        }
+        }*/
+        $this->games->validateModel($request);
         $file = $request->file('picture');
         $allowed_array = array('image/png', 'image/jpeg', 'image/bmp');
         if (in_array($file->getClientMimeType(), $allowed_array)) {

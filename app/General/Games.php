@@ -9,6 +9,10 @@ class Games extends Model
 {
     protected $table = 'games';
 
+    public $rules = [
+        'name'  =>  'required'
+    ];
+
     public static function addGame(Request $request)
     {
         $game = new self;

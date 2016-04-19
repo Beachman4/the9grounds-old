@@ -30,6 +30,13 @@ class Users extends Model
      */
     protected $hidden = [];
 
+    protected $rules = [
+        'email' =>  'required|email|unique:users,email',
+        'username'  =>  'required|unique:users,username',
+        'password'  =>  'required|same:confirm_password|min:6',
+        'confirm_password'  =>  'required|min:6',
+    ];
+
     public function resets()
     {
         return $this->hasOne('App\PasswordReset');

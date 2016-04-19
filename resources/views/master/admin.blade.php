@@ -72,6 +72,20 @@
                     <h1>{{ $title }}</h1>
                 </section>
             @endif
+            @if ($errors->any())
+                <div class="alert alert-danger alert-dismissible">
+                    @foreach ($errors->all() as $error)
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <p style="color: black">{{ $error }}</p>
+                    @endforeach
+                </div>
+            @endif
+            @if (session()->has('notification'))
+                <div class="alert alert-info alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <p style="color: black;">{{ session()->get('notification') }}</p>
+                </div>
+            @endif
         @yield('content')
         </div>
     </div>

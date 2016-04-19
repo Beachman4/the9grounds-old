@@ -34,6 +34,6 @@ class GenerateBrackets extends Job implements ShouldQueue
      */
     public function handle()
     {
-
+        $this->generator->generate();
     }
 }

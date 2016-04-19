@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use App\Events\TournamentWasCreated;
+use App\Jobs\GenerateBrackets;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -29,6 +30,6 @@ class DispatchTournamentBracketGenerator implements ShouldQueue
      */
     public function handle(TournamentWasCreated $event)
     {
-
+        $this->dispatch(new GenerateBrackets($event->tournament));
     }
 }
