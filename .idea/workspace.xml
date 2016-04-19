@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1a182ae-caa4-432b-992c-57452b497f41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_18_220941_change_tournaments_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_18_234415_Tournament_groups_matches.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Core/Repository.php" afterPath="$PROJECT_DIR$/app/Core/Repository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Events/TournamentWasCreated.php" afterPath="$PROJECT_DIR$/app/Events/TournamentWasCreated.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/General/GameRepository.php" afterPath="$PROJECT_DIR$/app/General/GameRepository.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/General/Games.php" afterPath="$PROJECT_DIR$/app/General/Games.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/GamesController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/GamesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/AdminMiddleware.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Jobs/GenerateBrackets.php" afterPath="$PROJECT_DIR$/app/Jobs/GenerateBrackets.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Listeners/DispatchTournamentBracketGenerator.php" afterPath="$PROJECT_DIR$/app/Listeners/DispatchTournamentBracketGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Tournament/TournamentBracketGenerator.php" afterPath="$PROJECT_DIR$/app/Tournament/TournamentBracketGenerator.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Users/Users.php" afterPath="$PROJECT_DIR$/app/Users/Users.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/session.php" afterPath="$PROJECT_DIR$/config/session.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/admin.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/admin.blade.php" />
     </list>
     <ignored path="the9grounds.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -134,8 +120,8 @@
       <file leaf-file-name="2016_04_18_234415_Tournament_groups_matches.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_18_234415_Tournament_groups_matches.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.359375">
-              <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.42454955">
+              <caret line="14" column="79" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -752,6 +738,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ckeditor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="the9grounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="the9grounds" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="database" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -1255,18 +1263,6 @@
       <option name="number" value="Default" />
       <updated>1454275219958</updated>
     </task>
-    <task id="LOCAL-00002" summary="Updates">
-      <created>1458284318741</created>
-      <option name="number" value="00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1458284318741</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Updates">
-      <created>1458284555836</created>
-      <option name="number" value="00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1458284555836</updated>
-    </task>
     <task id="LOCAL-00004" summary="lets catch some bots">
       <created>1458503570833</created>
       <option name="number" value="00004" />
@@ -1549,7 +1545,19 @@
       <option name="project" value="LOCAL" />
       <updated>1461016909256</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="Will explain changes when I get home">
+      <created>1461024607252</created>
+      <option name="number" value="00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1461024607252</updated>
+    </task>
+    <task id="LOCAL-00052" summary="Removing Ckeditor html files">
+      <created>1461024672951</created>
+      <option name="number" value="00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1461024672951</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1563,7 +1571,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32241014" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1572,7 +1580,7 @@
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1601,8 +1609,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Viewport issue" />
-    <MESSAGE value="testing something" />
     <MESSAGE value="Fix topbar title" />
     <MESSAGE value="ads" />
     <MESSAGE value="Google Analytics" />
@@ -1626,7 +1632,9 @@
     <MESSAGE value="Instead of accessing the model every time, I called it in the construct so I can now use, $this-&gt;model_base-&gt;get() instead of (for example)Users::get(); &#10;Also working on Brackets jquery extension.  Hoping to make some progress tonight." />
     <MESSAGE value="Fix" />
     <MESSAGE value="Testing Github pushing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Testing Github pushing" />
+    <MESSAGE value="Will explain changes when I get home" />
+    <MESSAGE value="Removing Ckeditor html files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Removing Ckeditor html files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -2055,8 +2063,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_18_234415_Tournament_groups_matches.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.359375">
-          <caret line="28" column="50" selection-start-line="28" selection-start-column="50" selection-end-line="28" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.42454955">
+          <caret line="14" column="79" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
           <folding />
         </state>
       </provider>
