@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Http\Requests\UserCreateRequest;
 use App\PasswordReset;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
@@ -28,6 +29,13 @@ class Users extends Model
      * @var array
      */
     protected $hidden = [];
+
+    protected $rules = [
+        'email' =>  'required|email|unique:users,email',
+        'username'  =>  'required|unique:users,username',
+        'password'  =>  'required|same:confirm_password|min:6',
+        'confirm_password'  =>  'required|min:6',
+    ];
 
     public function resets()
     {
@@ -97,7 +105,7 @@ class Users extends Model
         }
     }
 
-    public static function register(Request $request)
+    public static function register(UserCreateRequest $request)
     {
         $user = new self;
         $user->username = $request->input('username');

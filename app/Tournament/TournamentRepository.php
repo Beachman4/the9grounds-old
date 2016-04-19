@@ -3,15 +3,15 @@
 namespace App\Repository;
 
 use App\Repository\Repository;
-use App\Games;
+use App\Tournament;
 
-class GameRepository extends Repository
+class TournamentRepository extends Repository
 {
 
     /**
-     * GameRepository constructor.
+     * TournamentRepository constructor.
      */
-    public function __construct(Games $model)
+    public function __construct(Tournament $model)
     {
         $this->model = $model;
     }
@@ -19,7 +19,6 @@ class GameRepository extends Repository
     /*
      * Call custom Eloquent queries below
      */
-
 }
 
 

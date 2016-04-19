@@ -8,11 +8,12 @@
 
 namespace App\Repository;
 
-use Illuminate\Http\Request;
-//use App\Repository\RepositoryInterface;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 abstract class Repository implements RepositoryInterface
 {
+    use ValidatesRequests;
+
     public $model;
 
     public function all($hidden = false)
@@ -64,5 +65,11 @@ abstract class Repository implements RepositoryInterface
     public function delete($id)
     {
         return $this->find($id)->delete();
+    }
+
+    public function validateModel($request)
+    {
+        \Log::emergency('testing');
+        $this->validate($request, $this->model->rules);
     }
 }

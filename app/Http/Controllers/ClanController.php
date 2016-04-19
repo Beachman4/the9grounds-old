@@ -50,9 +50,9 @@ class ClanController extends Controller
         return view('clans.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-
+        dd($request->all());
     }
 
     public function edit()

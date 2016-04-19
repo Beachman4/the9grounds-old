@@ -19,6 +19,6 @@ class AdminMiddleware
         if (User::isAdmin()) {
             return $next($request);
         }
-        return redirect()->back();
+        return redirect()->route('index');
     }
 }

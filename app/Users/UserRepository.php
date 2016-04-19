@@ -8,8 +8,6 @@ use App\Users;
 class UserRepository extends Repository
 {
 
-    private $reset;
-
     /**
      * UserRepository constructor.
      */
