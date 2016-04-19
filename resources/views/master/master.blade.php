@@ -196,7 +196,7 @@
                      style=""
                      data-ad-client="ca-pub-2570031793397892"
                      data-ad-slot="8124173240"
-                     data-ad-format="auto"></ins>
+                     data-ad-format="auto" width="auto"></ins>
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>
