@@ -180,7 +180,8 @@
                 @yield('content')
             </div>
         </div>
-        @if ($_SERVER['REMOTE_ADDR'] != '::1')
+        {{--$_SERVER['REMOTE_ADDR'] != '::1'--}}
+        @if (true)
             <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- the9grounds -->
         <div class="row" style="margin-top: 3rem; margin-bottom: 3rem;">
@@ -192,14 +193,16 @@
                 <script>
                     (adsbygoogle = window.adsbygoogle || []).push({});
                 </script>-->
-                <ins class="adsbygoogle"
-                     style=""
-                     data-ad-client="ca-pub-2570031793397892"
-                     data-ad-slot="8124173240"
-                     data-ad-format="auto" width="auto"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
+                <div class="ad">
+                    <ins class="adsbygoogle"
+                         data-ad-client="ca-pub-2570031793397892"
+                         data-ad-slot="8124173240"
+                         data-ad-format="auto"
+                         style="display:block;width:728px;height:90px; margin: 0 auto;"></ins>
+                    <script>
+                        (adsbygoogle = window.adsbygoogle || []).push({});
+                    </script>
+                </div>
             </div>
         </div>
         @endif
