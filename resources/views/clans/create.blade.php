@@ -1,12 +1,12 @@
 @extends('master.master')
 @section('content')
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/TextboxList.css') }}">
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/TextboxList.Autocomplete.css') }}">
-    <script src="{{ URL::asset('assets/js/jquery.browser.min.js') }}"></script>
-    <script src="{{ URL::asset('assets/js/GrowingInput.js') }}"></script>
-    <script src="{{ URL::asset('assets/js/SuggestInput.js') }}"></script>
-    <script src="{{ URL::asset('assets/js/TextboxList.js') }}"></script>
-    <script src="{{ URL::asset('assets/js/TextboxList.Autocomplete.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/TextboxList.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/TextboxList.Autocomplete.css') }}">
+    <script src="{{ asset('assets/js/jquery.browser.min.js') }}"></script>
+    <script src="{{ asset('assets/js/GrowingInput.js') }}"></script>
+    <script src="{{ asset('assets/js/SuggestInput.js') }}"></script>
+    <script src="{{ asset('assets/js/TextboxList.js') }}"></script>
+    <script src="{{ asset('assets/js/TextboxList.Autocomplete.js') }}"></script>
     <form method="post" action="/clans">
         <div class="row">
             <div class="small-6 columns">

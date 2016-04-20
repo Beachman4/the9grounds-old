@@ -13,8 +13,8 @@
             }
         }
     </style>
-    <link rel="stylesheet" href="{{ URL::asset('assets/css/foundation-datepicker.min.css') }}"/>
-    <script src="{{ URL::asset('assets/js/foundation-datepicker.min.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('assets/css/foundation-datepicker.min.css') }}"/>
+    <script src="{{ asset('assets/js/foundation-datepicker.min.js') }}"></script>
     <form method="POST" action="/tournaments">
         <div class="row" style="margin-top: 2rem;">
             <div class="large-2 large-offset-1 columns">

@@ -1,7 +1,7 @@
 @extends('master.master')
 @section('content')
     <script src='https://www.google.com/recaptcha/api.js'></script>
-    <script src="{{ URL::asset('assets/js/pwstrength.js') }}"></script>
+    <script src="{{ asset('assets/js/pwstrength.js') }}"></script>
     <div class="row expanded" style="border-bottom: 1px solid gray">
         <div class="small-12 columns">
             <h1>Create Account</h1>

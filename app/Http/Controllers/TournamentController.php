@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\TestBroadCast;
 use App\TournamentsGroups;
 use Illuminate\Http\Request;
 
@@ -47,7 +48,8 @@ class TournamentController extends Controller
         $this->middleware('App\Http\Middleware\UserMiddleware', ['except' => [
             'index',
             'show',
-            'test'
+            'test',
+            'testBroadcast'
         ]]);
     }
 
@@ -114,6 +116,11 @@ class TournamentController extends Controller
     public function test()
     {
         return view('tournament.test');
+    }
+
+    public function testBroadcast()
+    {
+        event(new TestBroadCast());
     }
 
     /**

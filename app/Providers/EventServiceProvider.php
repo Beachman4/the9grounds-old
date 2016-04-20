@@ -26,6 +26,9 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\SendTournamentCreatedEmail',
             'App\Listeners\DispatchTournamentBracketGenerator',
         ],
+        'App\Events\TestBroadCast' => [
+            'App\Listeners\TestBroadcastListener',
+        ],
     ];
 
     /**

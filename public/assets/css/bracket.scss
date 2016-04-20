@@ -5,14 +5,19 @@
 
 }
 .group {
-  width: 200px;
+  width: 175px;
+  display: inline;
+  h4 {
+    text-align: center;
+  }
 }
 .group_part {
   padding: 20px;
   background-color: slategray;
   list-style: none;
-  li {
-    margin: 5px;
+  li, span {
+    padding: 5px;
+    display: inline;
     background-color: darkgray;
   }
 }

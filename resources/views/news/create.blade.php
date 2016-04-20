@@ -1,6 +1,6 @@
 @extends('master.master')
 @section('content')
-    <script src="{{ URL::asset('assets/ckeditor/ckeditor.js') }}"></script>
+    <script src="{{ asset('assets/ckeditor/ckeditor.js') }}"></script>
     <form method="POST">
         <div class="row">
             <div class=" small-12 large-8 large-offset-2 columns">

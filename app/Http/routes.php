@@ -56,6 +56,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
         #Route::post('/create', 'TournamentController@')
     #});
     Route::get('/tournaments/test', 'TournamentController@test');
+    Route::get('/tournaments/testB', 'TournamentController@testBroadcast');
     Route::get('/clans/getUsers', 'ClanController@getUsers');
     Route::resource('tournaments', 'TournamentController');
     Route::resource('clans', 'ClanController');

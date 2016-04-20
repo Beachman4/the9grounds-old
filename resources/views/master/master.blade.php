@@ -2,19 +2,19 @@
     <head>
         <title>The Nine Grounds</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ URL::asset('assets/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0-beta.1/themes/smoothness/jquery-ui.css">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" href="{{ URL::asset('assets/nivo/nivo.css') }}">
-        <link rel="stylesheet" href="{{ URL::asset('assets/nivo/themes/dark/dark.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/nivo/nivo.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/nivo/themes/dark/dark.css') }}">
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
         <script src="https://cdn.jsdelivr.net/foundation/6.1.2/foundation.min.js"></script>
-        <script src="{{ URL::asset('assets/js/main.js') }}"></script>
-        <script src="{{ URL::asset('assets/nivo/nivo.js') }}"></script>
+        <script src="{{ asset('assets/js/main.js') }}"></script>
+        <script src="{{ asset('assets/nivo/nivo.js') }}"></script>
     </head>
     <body>
     <script>

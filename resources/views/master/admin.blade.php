@@ -2,20 +2,20 @@
     <head>
         <title>The Nine Grounds</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{ URL::asset('assets/css/admin.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/css/admin.css') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0-beta.1/themes/smoothness/jquery-ui.css">
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
-        <script src="{{ URL::asset('assets/js/admin.js') }}"></script>
+        <script src="{{ asset('assets/js/admin.js') }}"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="{{ URL::asset('assets/adminlte/css/AdminLTE.min.css') }}">
-        <link rel="stylesheet" href="{{ URL::asset('assets/adminlte/css/skins/_all-skins.min.css') }}">
-        <script src="{{ URL::asset('assets/adminlte/js/app.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('assets/adminlte/css/AdminLTE.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('assets/adminlte/css/skins/_all-skins.min.css') }}">
+        <script src="{{ asset('assets/adminlte/js/app.min.js') }}"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     </head>
     <body class="skin-blue sidebar-mini">
