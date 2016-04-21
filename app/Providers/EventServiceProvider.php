@@ -15,6 +15,7 @@ class EventServiceProvider extends ServiceProvider
     protected $listen = [
         'App\Events\UserWasCreated' => [
             'App\Listeners\ConfirmationEmailListener',
+            'App\Listeners\SendAylonEmail',
         ],
         'App\Events\UserHasForgot' => [
             'App\Listeners\SendForgotEmailListener',
@@ -28,6 +29,9 @@ class EventServiceProvider extends ServiceProvider
         ],
         'App\Events\TestBroadCast' => [
             'App\Listeners\TestBroadcastListener',
+        ],
+        'App\Events\OnShoutboxMessage' => [
+            'App\Listeners\MessageReceived',
         ],
     ];
 

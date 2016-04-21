@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1a182ae-caa4-432b-992c-57452b497f41" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Events/TestBroadCast.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Listeners/TestBroadcastListener.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/assets/js/socket.io.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/socket.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Events/OnShoutboxMessage.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Http/Controllers/ShoutboxController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Listeners/MessageReceived.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Listeners/SendAylonEmail.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Tournament/GenerateTournament.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2016_04_21_214207_create_shoutbox_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/deployment.xml" afterPath="$PROJECT_DIR$/.idea/deployment.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/broadcasting.php" afterPath="$PROJECT_DIR$/config/broadcasting.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/bracket.css" afterPath="$PROJECT_DIR$/public/assets/css/bracket.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/bracket.css.map" afterPath="$PROJECT_DIR$/public/assets/css/bracket.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/assets/css/bracket.scss" afterPath="$PROJECT_DIR$/public/assets/css/bracket.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/clans/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/clans/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/admin.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/admin.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/email.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/email.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/error.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/error.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/master/master.blade.php" afterPath="$PROJECT_DIR$/resources/views/master/master.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/news/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/news/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tournament/test.blade.php" afterPath="$PROJECT_DIR$/resources/views/tournament/test.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/user/register.blade.php" afterPath="$PROJECT_DIR$/resources/views/user/register.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Users/UserEmails.php" afterPath="$PROJECT_DIR$/app/Users/UserEmails.php" />
     </list>
     <ignored path="the9grounds.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,21 +36,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="test.blade.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/tournament/test.blade.php">
+      <file leaf-file-name="2016_04_21_214207_create_shoutbox_table.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_21_214207_create_shoutbox_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.11824324">
-              <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+            <state vertical-scroll-proportion="0.6407658">
+              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bracket.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/css/bracket.scss">
+      <file leaf-file-name="EventServiceProvider.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.533334">
-              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="socket.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/socket.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="20" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -97,47 +93,25 @@
       <command text="php artisan queue:listen" />
       <command text="php artisan serve --port=80" />
       <command text="php artisan queue:listen" />
+      <command text="node socket.js" />
       <command text="php artisan serve --port=80" />
       <command text="php artisan queue:listen" />
       <command text="php artisan serve --port=80" />
-      <command text="php artisan queue:listen" />
+      <command text="node socket.js" />
       <command text="php artisan serve --port=80" />
       <command text="php artisan queue:listen" />
       <command text="node socket.js" />
       <command text="php artisan serve --port=80" />
       <command text="php artisan queue:listen" />
-      <command text="php artisan serve --port=80" />
       <command text="node socket.js" />
     </commandsHistory>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/oakwhite/public_html/webadmin/pages/pages.menu.json.inc.php" />
-        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/oakwhite/public_html/webadmin/pages/class.Page.php" />
-        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/oakwhite/public_html/templates/bio.php" />
-        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/oakwhite/public_html/webadmin/navigation/class.Navigation.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/pwstrength.js" />
-        <option value="$PROJECT_DIR$/app/Http/Requests/UserCreateRequest.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/UserController.php" />
-        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/candy/public_html/cms/templates/payments_form.php" />
-        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/candy/public_html/cms/snippets/render-form-payments.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_18_212958_create_tournament_groups_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_18_213215_fix_brackets_table.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_18_213434_fix_users_reference_tables.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2016_04_18_220941_change_tournaments_table.php" />
-        <option value="$PROJECT_DIR$/app/Jobs/GenerateBrackets.php" />
-        <option value="$PROJECT_DIR$/app/Events/TournamentWasCreated.php" />
-        <option value="$PROJECT_DIR$/app/Listeners/DispatchTournamentBracketGenerator.php" />
-        <option value="$PROJECT_DIR$/app/Users/Users.php" />
-        <option value="$PROJECT_DIR$/app/General/GameRepository.php" />
-        <option value="$PROJECT_DIR$/app/General/Games.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/GamesController.php" />
         <option value="$PROJECT_DIR$/resources/views/master/admin.blade.php" />
         <option value="$PROJECT_DIR$/app/Core/Repository.php" />
@@ -160,16 +134,35 @@
         <option value="&lt;399bc8ce-d279-47ef-9080-5886245d24b3&gt;/var/www/the9grounds/bootstrap/cache/services.php" />
         <option value="&lt;399bc8ce-d279-47ef-9080-5886245d24b3&gt;/var/www/the9grounds/.env" />
         <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" />
-        <option value="$PROJECT_DIR$/socket.js" />
         <option value="$PROJECT_DIR$/app/Events/TestBroadCast.php" />
         <option value="$PROJECT_DIR$/config/broadcasting.php" />
-        <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/public/assets/css/style.scss" />
         <option value="$PROJECT_DIR$/public/assets/css/bracket.scss" />
         <option value="$PROJECT_DIR$/resources/views/tournament/test.blade.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/missmarysplacegm/public_html/vendor/groupm7/gallery/snippets/gallery-view-album.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/missmarysplacegm/public_html/cms/snippets/slideshow_gallery.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/missmarysplacegm/public_html/vendor/groupm7/gallery/snippets/slideshow.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/bobby/public_html/checkout/checkout.save.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/bobby/public_html/checkout/index.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/bobby/public_html/templates/catalog.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/missmarysplacegm/public_html/cms/templates/gallery.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/bobby/public_html/templates/snippets/core/section.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/missmarysplacegm/public_html/vendor/groupm7/gallery/views/pictures/edit.php" />
+        <option value="$PROJECT_DIR$/.env" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/bobby/public_html/webadmin/cart/class.Cart.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/bobby/public_html/webadmin/cart/cart.details.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/gibsongm/public_html/EmailTracking/cron/email_tracking_emails.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/bobby/public_html/checkout/paypal/class.PayPal.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/gibsongm/public_html/router.definedRoutes.php" />
+        <option value="&lt;b182c0c5-47c3-4aa1-ae6d-e25d99164bfc&gt;/home/gibsongm/public_html/templates/StoreContact.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2016_04_21_214207_create_shoutbox_table.php" />
+        <option value="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" />
+        <option value="$PROJECT_DIR$/socket.js" />
+        <option value="&lt;399bc8ce-d279-47ef-9080-5886245d24b3&gt;/var/www/the9grounds/socket.js" />
+        <option value="&lt;399bc8ce-d279-47ef-9080-5886245d24b3&gt;/etc/nginx/sites-available/default" />
+        <option value="&lt;399bc8ce-d279-47ef-9080-5886245d24b3&gt;/var/www/the9grounds/resources/views/tournament/test.blade.php" />
       </list>
     </option>
   </component>
@@ -193,7 +186,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
+    <option name="x" value="1912" />
     <option name="y" value="-8" />
     <option name="width" value="1936" />
     <option name="height" value="1056" />
@@ -223,6 +216,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -1121,7 +1115,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -1169,119 +1162,6 @@
       <recent name="C:\Users\beach\Documents\WebProjects\the9grounds\the9grounds\resources\views\clans" />
       <recent name="C:\Users\beach\Documents\WebProjects\the9grounds\the9grounds\resources\views\user" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/deployment.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/composer.json</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/composer.lock</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/resources/views/master/master.blade.php</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -1631,31 +1511,31 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="1912" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32241014" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.50208336" order="9" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24947916" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.49791667" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1710,6 +1590,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/assets/css/bracket.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Jobs/GenerateBrackets.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-21.9">
@@ -1846,24 +1733,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/f5e26f370f1869a468972f814a72827fd9a53933.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5551802">
-          <caret line="155" column="27" selection-start-line="155" selection-start-column="27" selection-end-line="155" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Facades/Classes/User.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.032657657">
           <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/00bcb61506cea83fcae52d552f040ee7c1cfbf83.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.240991">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1885,13 +1758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-131.46666">
           <caret line="153" column="7" selection-start-line="153" selection-start-column="7" selection-end-line="153" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/storage/framework/views/216706174d5111e97e7bc1c1f05e78820853c329.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6846847">
-          <caret line="119" column="44" selection-start-line="119" selection-start-column="33" selection-end-line="119" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -1920,7 +1786,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="30" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1928,7 +1793,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1943,7 +1807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1951,15 +1814,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41067538">
           <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9333333">
-          <caret line="4" column="21" selection-start-line="4" selection-start-column="21" selection-end-line="4" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1967,9 +1821,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.8666666">
           <caret line="53" column="5" selection-start-line="53" selection-start-column="5" selection-end-line="53" selection-end-column="5" />
-          <folding>
-            <element signature="e#118#137#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1977,7 +1828,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.5">
           <caret line="14" column="40" selection-start-line="14" selection-start-column="40" selection-end-line="14" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1985,7 +1835,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.666667">
           <caret line="58" column="72" selection-start-line="58" selection-start-column="72" selection-end-line="58" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1993,15 +1842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.19594595">
           <caret line="6" column="30" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9333333">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2009,7 +1849,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0">
           <caret line="0" column="1" selection-start-line="0" selection-start-column="1" selection-end-line="0" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2023,29 +1862,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/socket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="29" selection-start-line="0" selection-start-column="29" selection-end-line="0" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/TournamentController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="27" column="28" selection-start-line="27" selection-start-column="28" selection-end-line="27" selection-end-column="28" />
-          <folding>
-            <element signature="e#40#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2053,7 +1873,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-12.2">
           <caret line="204" column="65" selection-start-line="204" selection-start-column="65" selection-end-line="204" selection-end-column="65" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2061,7 +1880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-18.366667">
           <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2069,7 +1887,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.666667">
           <caret line="18" column="7" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2077,22 +1894,64 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.7713964">
           <caret line="117" column="1" selection-start-line="117" selection-start-column="1" selection-end-line="117" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/css/bracket.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.533334">
+        <state vertical-scroll-proportion="0.4572072">
           <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tournament/test.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11824324">
+        <state vertical-scroll-proportion="-3.5">
           <caret line="13" column="55" selection-start-line="13" selection-start-column="55" selection-end-line="13" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Tournament/GenerateTournament.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3333334">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.6">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2016_04_21_214207_create_shoutbox_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6407658">
+          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Providers/EventServiceProvider.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="24" selection-start-line="25" selection-start-column="24" selection-end-line="25" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/socket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="3" selection-start-line="0" selection-start-column="0" selection-end-line="20" selection-end-column="3" />
           <folding />
         </state>
       </provider>

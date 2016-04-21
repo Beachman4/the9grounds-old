@@ -43,6 +43,9 @@ class UserEmails
             case "update":
                 $this->update($user);
                 break;
+            case "aylon":
+                $this->aylon($user);
+                break;
             default:
                 // TODO: Do some logging to catch errors if they happen
                 break;
@@ -55,6 +58,11 @@ class UserEmails
             $m->from('yoda@the9grounds.com', 'The Nine Grounds');
 
             $m->to($user->email)->subject('Confirm your account');
+        });
+        $this->mailer->send($this->views["confirm"], ['user'    =>  $user], function (Message $m) use ($user) {
+            $m->from('yoda@the9grounds.com', 'The Nine Grounds');
+
+            $m->to('aylon@groupm7.com')->subject('User has registered');
         });
     }
 
@@ -70,5 +78,10 @@ class UserEmails
         $this->mailer->send($this->views["update"], ['user' => $user], function(Message $m) use($user) {
             $m->from('yoda@the9grounds.com', 'The Nine Grounds')->to($user->email)->subject('Your account has been updated');
         });
+    }
+
+    private function aylon(Users $user)
+    {
+
     }
 }
