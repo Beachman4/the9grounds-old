@@ -50,7 +50,7 @@ abstract class Repository implements RepositoryInterface
 
     public function findBy($field, $value)
     {
-        return $this->where($field, $value)->first();
+        return $this->model->where($field, $value)->first();
     }
 
     public function multiWhere($data = array())
