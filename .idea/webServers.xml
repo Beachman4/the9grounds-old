@@ -30,6 +30,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="78d0abcc-de4d-4290-a870-b4ef9bdf3546" name="gitlab" url="http://10.0.0.11">
+        <fileTransfer host="10.0.0.11" port="22" accessType="SFTP" password="dfcbdfd8dfc6dfc3dfc4dfcddfdedfc5dfc4df98" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

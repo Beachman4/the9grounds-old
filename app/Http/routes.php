@@ -28,7 +28,7 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
     Route::get('/register', 'UserController@getRegister')->name('register');
     Route::get('/resend-confirmation', 'UserController@resendConfirmation');
     Route::get('/about', 'BaseController@getAbout')->name('about');
-    Route::get('/confirm/{token}', 'UserController@confirmAccount');
+    Route::get('/confirm/{token}', 'UserController@getConfirmAccount');
     Route::get('/forgot', 'UserController@getForgot');
     Route::get('/forgot/{token}', 'UserController@tokenForgot');
 
