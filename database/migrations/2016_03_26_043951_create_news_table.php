@@ -16,6 +16,8 @@ class CreateNewsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->longText('body');
+            $table->boolean('global');
+            $table->integer('website_id');
             $table->boolean('hidden');
             $table->boolean('pinned');
             $table->timestamps();

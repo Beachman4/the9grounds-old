@@ -19,21 +19,12 @@ class BaseController extends Controller
 {
     public function index()
     {
-        if ($_SERVER['REMOTE_ADDR'] != '67.216.96.44') {
-            DB::table('botcatcher')->insert([
-                'ip'    =>  $_SERVER['REMOTE_ADDR'],
-                'log'   =>  'BOTTTTTTT',
-            ]);
-        }
         $user = User::Get();
-
-        $games = Games::where('disabled', '!=', '1')->get();
 
         $news = News::where('hidden', 0)->paginate(3);
         return view('index', [
             'news'  =>  $news,
-            'user'  =>  $user,
-            'games' =>  $games
+            'user'  =>  $user
         ]);
     }
 

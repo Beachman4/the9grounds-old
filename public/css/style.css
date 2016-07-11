@@ -68,15 +68,15 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
 @media screen and (max-width: 39.9375em) {
   .other_services {
     text-align: center; }
-
   .login_button {
     text-align: right !important; }
-
   .register_button {
     text-align: left !important; } }
+
 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
   .register_button {
     text-align: left !important; } }
+
 @media screen and (min-width: 64em) {
   .user_stuff {
     min-width: 15%;
@@ -86,8 +86,15 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
     background-color: #e6e6e6; }
     .user_stuff .login, .user_stuff .ca {
       margin-top: 1rem; }
-
   .logged_user {
     margin-bottom: 1rem; } }
+
+.navbar-nav {
+  float: none;
+  margin: 0 auto;
+  display: table; }
+
+.btn-success {
+  color: #fff !important; }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,35 +1,16 @@
 @extends('master.master')
 @section('content')
-    <link rel="stylesheet" href="{{ asset('assets/css/TextboxList.css') }}">
-    <link rel="stylesheet" href="{{ asset('assets/css/TextboxList.Autocomplete.css') }}">
-    <script src="{{ asset('assets/js/jquery.browser.min.js') }}"></script>
-    <script src="{{ asset('assets/js/GrowingInput.js') }}"></script>
-    <script src="{{ asset('assets/js/SuggestInput.js') }}"></script>
-    <script src="{{ asset('assets/js/TextboxList.js') }}"></script>
-    <script src="{{ asset('assets/js/TextboxList.Autocomplete.js') }}"></script>
-    <form method="post" action="/clans">
-        <div class="row">
-            <div class="small-6 columns">
-                <label>Clan Name</label>
-
-                <input type="text" name="name">
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="progress" role="progressbar" tabindex="0" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <span class="progress-meter">
+                    <p class="progress-meter-text">0%</p>
+                </span>
             </div>
-            <div class="small-6 columns">
-                <label>Members</label>
-                <small>To delete a user from the list, use the arrow keys and press delete.</small>
-                <div class="members_input">
-                    <input type="text" name="members" value="" id="members_input">
-                </div>
-            </div>
+            <script>
+                $('.progress-meter').animate({width: "25%"});
+                $('.progress-meter-text').html('25%');
+            </script>
         </div>
-        {{ csrf_field() }}
-    </form>
-    <script>
-        var t = new $.TextboxList('#members_input', {unique: true, plugins: {autocomplete: {
-            minLength: 3,
-            queryRemote: true,
-            remote: {url: '/clans/getUsers'}
-        }}});
-
-    </script>
+    </div>
 @stop

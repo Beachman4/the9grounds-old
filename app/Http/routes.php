@@ -1,10 +1,6 @@
 <?php
 
 
-Route::get('/glide/{path}', function(League\Glide\Server $server, $path) {
-    $server->outputImage($path, $_GET);
-});
-
 Route::get('/image/{name}', function($name) {
     $path = $_SERVER['DOCUMENT_ROOT'] . '/assets/img/' . $name;
     if (file_exists($path)) {
@@ -88,4 +84,10 @@ Route::group(['middleware'  =>  ['web', 'App\Http\Middleware\BannedMiddleware']]
         Route::resource('games', 'GamesController');
     });
 
+});
+
+Route::group(['prefix' => 'api', 'middleware' => ['web']], function() {
+    Route::post('/login', 'ApiController@login');
+    Route::post('/register', 'ApiController@register');
+    Route::get('/checkLogin', 'ApiController@checkLogin');
 });

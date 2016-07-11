@@ -15,7 +15,7 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
   color: #00234F !important;
   padding: 2rem !important;
   ul {
-   // background-color: #000D20 !important;
+    // background-color: #000D20 !important;
     background-color: #e6e6e6 !important;
   }
   a {
@@ -114,4 +114,12 @@ p, h1, h2, h3, h4, h5, label, button, small, span, a {
     //margin-top: 1rem;
     margin-bottom: 1rem;
   }
+}
+.navbar-nav {
+  float: none;
+  margin: 0 auto;
+  display: table;
+}
+.btn-success {
+  color: #fff !important;
 }

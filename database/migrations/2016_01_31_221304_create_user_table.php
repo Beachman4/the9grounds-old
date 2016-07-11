@@ -19,12 +19,9 @@ class CreateUserTable extends Migration
             $table->string('email');
             $table->string('picture');
             $table->string('password');
-            $table->integer('bnet_id');
-            $table->string('bnet_name');
-            $table->boolean('admin');
-            $table->boolean('banned');
-            $table->timestamp('banned_date');
-            $table->unsignedInteger('clan_id');
+            $table->boolean('global_admin');
+            $table->boolean('global_banned');
+            $table->timestamp('global_banned_date');
             $table->string('stripe_id')->nullable();
             $table->string('card_brand')->nullable();
             $table->string('card_last_four')->nullable();

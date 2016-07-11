@@ -4,6 +4,8 @@ namespace App\Repository;
 
 use App\Repository\Repository;
 use App\Users;
+use User;
+use Hash;
 
 class UserRepository extends Repository
 {
@@ -38,6 +40,34 @@ class UserRepository extends Repository
     public function findResetBy($field, $value)
     {
         return $this->model->resets()->where($field, $value)->first();
+    }
+
+    public function apiLogin($request)
+    {
+        if ($user = $this->model->where('username', $request->input('username_email'))->orWhere('email', $request->input('username_email'))->first()) {
+            if (Hash::check($request->input('password'), $user->password)) {
+                User::signUserIn($user->id);
+                return $user;
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
+
+    public function apiRegister($request)
+    {
+        $user = new $this->model;
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->password = Hash::make($request->input('password'));
+        $token = $this->model->generateConToken();
+        $user->confirm_token = $token;
+        if ($user->save()) {
+            return $user;
+        }
+        return false;
     }
 
 

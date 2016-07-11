@@ -56,7 +56,7 @@
         </div>
         {{ csrf_field() }}
     </form>
-    <div class="row">
+    {{--<div class="row">
         <div class="small-12 columns">
             <div class="row">
                 <div class="small-12 large-5 large-offset-2 columns other_services">
@@ -82,7 +82,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>--}}
     <script>
         $(function() {
             $('#username').focus();

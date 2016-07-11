@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
             $table->string('recipients');
             $table->unsignedInteger('conversation_id');
             $table->longText('message');
-            $table->string('seen_by');
+            $table->string('seen');
             $table->timestamps();
 
             $table->foreign('conversation_id')->references('id')->on('conversations');
