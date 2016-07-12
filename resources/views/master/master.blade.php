@@ -53,7 +53,7 @@
                 &#9776;
             </button>
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
                 <a class="navbar-brand" href="/"><img src="/image/logo.png" height="30"></a>
                 <ul class="nav navbar-nav">
                     <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
