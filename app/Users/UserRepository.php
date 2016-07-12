@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Events\UserWasCreated;
 use App\Repository\Repository;
 use App\Users;
 use User;
@@ -44,30 +45,41 @@ class UserRepository extends Repository
 
     public function apiLogin($request)
     {
-        if ($user = $this->model->where('username', $request->input('username_email'))->orWhere('email', $request->input('username_email'))->first()) {
-            if (Hash::check($request->input('password'), $user->password)) {
+        $username_email = $request->input('username_email')['value'];
+        $password = $request->input('password')['value'];
+        if ($user = $this->model->where('username', $username_email)->orWhere('email', $username_email)->first()) {
+            if (Hash::check($password, $user->password)) {
                 User::signUserIn($user->id);
-                return $user;
+                return true;
             } else {
-                return false;
+                return "Your Username/Password is incorrect.";
             }
         } else {
-            return false;
+            return "Your Username/Password is incorrect.";
         }
     }
 
     public function apiRegister($request)
     {
+        $username = $request->input('username')['value'];
         $user = new $this->model;
-        $user->username = $request->input('username');
-        $user->email = $request->input('email');
-        $user->password = Hash::make($request->input('password'));
+        $user->username = $username;
+        $email = $request->input('email')['value'];
+        if ($this->model->where('email', $email)->count() > 0) {
+            return 'Email has been taken.';
+        } else {
+            $user->email = $email;
+        }
+        $password = $request->input('password')['value'];
+        $user->password = Hash::make($password);
         $token = $this->model->generateConToken();
         $user->confirm_token = $token;
         if ($user->save()) {
-            return $user;
+            event(new UserWasCreated($user));
+            User::signUserIn($user->id);
+            return true;
         }
-        return false;
+        return "Something went wrong";
     }
 
 

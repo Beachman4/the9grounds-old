@@ -1,13 +1,5 @@
 @extends('master.master')
 @section('content')
-    <style>
-        .theme-dark.slider-wrapper {
-            padding: 15px;
-        }
-        p {
-            color: #404040 !important;
-        }
-    </style>
     <div class="row">
         <div class="col-sm-12">
             <h1>Why Choose Us?</h1>

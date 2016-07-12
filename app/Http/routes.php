@@ -90,4 +90,6 @@ Route::group(['prefix' => 'api', 'middleware' => ['web']], function() {
     Route::post('/login', 'ApiController@login');
     Route::post('/register', 'ApiController@register');
     Route::get('/checkLogin', 'ApiController@checkLogin');
+    Route::post('/checkDomain', 'ApiController@checkDomain');
+    Route::post('/website', 'ApiController@website');
 });

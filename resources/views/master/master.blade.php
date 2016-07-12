@@ -2,16 +2,15 @@
     <head>
         <title>The Nine Grounds</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
         <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/css/tether.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0-beta.1/themes/smoothness/jquery-ui.css">
         <link href='https://fonts.googleapis.com/css?family=Roboto+Slab' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
         <script src="https://code.jquery.com/ui/1.12.0-beta.1/jquery-ui.min.js"></script>
         <link rel="stylesheet" href="/css/style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.2/js/tether.min.js"></script>
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
     <body id="app">
@@ -49,32 +48,25 @@
             });
         </script>
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a href="/"><img src="/image/logo.png" height="50"></a>
-                </div>
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                        <li><a href="/">Home</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#createWebsiteModal">Create a Clan</a></li>
-                        <li><a href="/about">About</a></li>
-                        @if (\User::isSignedIn())
-                        <li style="margin-left: 15px;"><a href="/logout">Logout</a></li>
-                        @else
-                        <li style="margin-left: 15px;"><a href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
-                        <li><a href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
-                        @endif
-                    </ul>
-                </div>
+        <nav class="navbar navbar-dark bg-primary">
+            <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+                &#9776;
+            </button>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-toggleable-xs" id="bs-example-navbar-collapse-1">
+                <a class="navbar-brand" href="/"><img src="/image/logo.png" height="30"></a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#createWebsiteModal">Create a Clan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                    {{--@if (\User::isSignedIn())
+                    <li class="nav-item" style="margin-left: 15px;"><a class="nav-link" href="/logout">Logout</a></li>
+                    @else
+                    <li class="nav-item" style="margin-left: 15px;"><a class="nav-link" href="#" data-toggle="modal" data-target="#loginModal">Login</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#registerModal">Register</a></li>
+                    @endif--}}
+                    <user-menu v-ref:user></user-menu>
+                </ul>
             </div>
         </nav>
 

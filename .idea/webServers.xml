@@ -37,6 +37,13 @@
           </advancedOptions>
         </fileTransfer>
       </webServer>
+      <webServer id="8c6e2380-3e28-4c83-9386-bc29642fec23" name="atlascredit" url="http://groupm7.com">
+        <fileTransfer host="groupm7.com" port="22" accessType="SFTP" password="df9ddf87dfe5dfe4dfefdf81dfdddfcfdfc8df81dfeddff8dfe5dfffdffadf87df9d" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

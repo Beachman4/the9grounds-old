@@ -20,41 +20,41 @@
                                         <h5>Register</h5>
                                     </div>
                                 </div>
+                                <div class="alert alert-danger" v-if="registerFailedMessage != ''">
+                                    <h5>Something went wrong!</h5>
+                                    <p>{{ registerFailedMessage }}</p>
+                                </div>
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
-                                        <div class="form-group">
-                                            <label for="email"></label>
-                                            <input type="email" class="form-control" name="email" id="email" v-model="registerData.email.value">
-                                            <div v-if="registerData.email.failed" class="validation-alert"><span>Required</span></div>
+                                        <div :class="['form-group', registerData.email.failed ? 'has-danger' : '']">
+                                            <label class="form-control-label" for="email">Email Address</label>
+                                            <input type="email" class="form-control form-control-danger" name="email" id="email" v-model="registerData.email.value">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <div class="form-group">
-                                            <label for="username">Username</label>
-                                            <input type="text" class="form-control" name="username" id="username" v-model="registerData.username.value">
-                                            <div v-if="registerData.username.failed" class="validation-alert"><span>Required</span></div>
+                                        <div :class="['form-group', registerData.username.failed ? 'has-danger': '']">
+                                            <label class="form-control-label" for="username">Username</label>
+                                            <input type="text" class="form-control form-control-danger" name="username" id="username" v-model="registerData.username.value">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <div class="form-group">
-                                            <label for="password"></label>
-                                            <input type="password" class="form-control" name="password" id="password" v-model="registerData.password.value">
-                                            <div v-if="registerData.password.failed" class="validation-alert"><span>Required</span></div>
+                                        <div :class="['form-group', registerData.password.failed ? 'has-danger' : '']">
+                                            <label class="form-control-label" for="password_register_modal">Password</label>
+                                            <input type="password" class="form-control form-control-danger" name="password" id="password_register_modal" v-model="registerData.password.value">
                                         </div>
                                     </div>
                                     <div class="col-lg-12 text-center">
-                                        <div class="form-group">
-                                            <label for="confirm_password"></label>
-                                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" v-model="registerData.confirm_password.value">
-                                            <div v-if="registerData.confirm_password.failed" class="validation-alert"><span>Required</span></div>
+                                        <div :class="['form-group', registerData.confirm_password.failed ? 'has-danger' : '']">
+                                            <label class="form-control-label" for="confirm_password">Confirm Password</label>
+                                            <input type="password" class="form-control form-control-danger" name="confirm_password" id="confirm_password" v-model="registerData.confirm_password.value">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-success" @click="registerSend">Register</button>
-                                            <button type="button" class="btn btn-default" @click="changeRegister">Login</button>
+                                            <button type="button" class="btn btn-primary-outline" @click="changeRegister">Login</button>
+                                            <button type="button" class="btn btn-success-outline" @click="registerSend">Register</button>
                                         </div>
                                     </div>
                                 </div>
@@ -64,60 +64,88 @@
                             <div class="col-lg-12">
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
-                                        <div class="form-group">
-                                            <label for="username_email">Email or Username</label>
-                                            <input type="text" class="form-control" name="username_email" id="username_email" v-model="loginData.username_email.value">
-                                            <div v-if="loginData.username_email.failed" class="validation-alert"><span>Required</span></div>
+                                        <h5>Login</h5>
+                                    </div>
+                                </div>
+                                <div class="alert alert-danger" v-if="loginFailedMessage != ''">
+                                    <h5>Something went wrong!</h5>
+                                    <p>{{ loginFailedMessage }}</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12 text-center">
+                                        <div :class="['form-group', loginData.username_email.failed ? 'has-danger' : '']">
+                                            <label class="form-control-label" for="username_email">Email or Username</label>
+                                            <input type="text" class="form-control form-control-danger" name="username_email" id="username_email" v-model="loginData.username_email.value">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12 text-center">
-                                        <div class="form-group">
-                                            <label for="password"></label>
-                                            <input type="password" class="form-control" name="password" id="password" v-model="loginData.password.value">
-                                            <div v-if="loginData.password.failed" class="validation-alert"><span>Required</span></div>
+                                        <div :class="['form-group', loginData.password.failed ? 'has-danger' : '']">
+                                            <label class="form-control-label" for="password">Password</label>
+                                            <input type="password" class="form-control form-control-danger" name="password" id="password" v-model="loginData.password.value">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-success" @click="loginSend">Login</button>
-                                            <button type="button" class="btn btn-default" @click="changeRegister">Register</button>
+                                            <button type="button" class="btn btn-primary-outline" @click="changeRegister">Register</button>
+                                            <button type="button" class="btn btn-success-outline" @click="loginSend">Login</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row" v-if="loggedIn">
+                    <div class="row" v-if="loggedIn && !websiteCreated">
                         <div class="col-lg-12">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="name"></label>
-                                        <input type="text" class="form-control" name="name" v-model="websiteData.name.value" id="name">
-                                        <div v-if="websiteData.name.failed" class="validation-alert"><span>Required</span></div>
+                            <div class="row" v-if="!websiteCreated && websiteFailedMessage != ''">
+                                <div class="col-lg-12 text-lg-center">
+                                    <div class="alert alert-danger">
+                                        <h5>Something went wrong</h5>
+                                        <p>{{ websiteFailedMessage }}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <label for="domain"></label>
-                                        <input type="text" class="form-control" name="domain" id="domain" v-model="websiteData.domain.value">
-                                        <div v-if="loginData.password.failed" class="validation-alert"><span>Required</span></div>
+                                    <div :class="['form-group', websiteData.name.failed ? 'has-danger' : websiteData.domain.tooshort ? 'has-danger' : '']">
+                                        <label class="form-control-label" for="name">Website Name</label>
+                                        <label class="form-control-label" for="name" v-if="websiteData.name.tooshort">Website Name must be greater than 3 characters.</label>
+                                        <input type="text" class="form-control form-control-danger"  name="name" v-model="websiteData.name.value" id="name">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div :class="['form-group', websiteNameTaken ? 'has-danger' : websiteData.domain.failed ? 'has-danger' : websiteData.domain.tooshort ? 'has-danger' : '']">
+                                        <label class="form-control-label" for="domain">Website Domain</label>
+                                        <p style="color: red" v-if="websiteData.domain.value != '' && websiteNameTaken">Website name is unavailable.</p>
+                                        <div class="input-group">
+                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-check" style="color: green" v-if="!websiteNameTaken"></i><i style="color: red;" class="fa fa-times-circle" v-else></i></span>
+                                            <input type="text" class="form-control form-control-danger" name="domain" id="domain" v-model="websiteData.domain.value" v-on:keyup="checkDomain">
+                                            <span class="input-group-addon">.the9grounds.com</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div class="row" v-if="websiteCreated">
+                        <div class="col-lg-12">
+                            <div class="alert alert-success">
+                                <h5>You're all done!</h5>
+                                <p>Your website is now created.  Please click the link below to go to it.</p>
+                            </div>
+                            <button type="button" @click="goToWebsite" class="btn btn-primary-outline">Go To Website</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="modal-footer">
                     <div class="btn-group" role="group" aria-label="Stuff">
-                        <button type="button" class="btn btn-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
-                        <button type="button" @click="createWebsite" v-if="loggedIn" class="btn btn-success">Create Website</button>
+                        <button type="button" class="btn btn-danger-outline" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
+                        <button type="button" @click="createWebsite" v-if="loggedIn" class="btn btn-success-outline" :disabled="websiteButton">Create Website</button>
                     </div>
                 </div>
             </div>
@@ -127,10 +155,25 @@
 
 <script>
     export default {
+        computed: {
+            websiteButton: function() {
+                if (this.websiteNameTaken) {
+                    return true;
+                } else if (this.websiteData.name.value == "" || this.websiteData.domain.value == "") {
+                    return true;
+                } else if (this.websiteData.name.value.lenght < 3 || this.websiteData.domain.value.length < 3) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
         data() {
             return {
                 loggedIn: false,
-                register: true,
+                register: false,
+                registerFailedMessage: "",
+                loginFailedMessage: "",
                 loginData: {
                     username_email: {
                         value: "",
@@ -162,22 +205,85 @@
                 websiteData: {
                     name: {
                         value: "",
-                        failed: false
+                        failed: false,
+                        tooshort: false,
                     },
                     domain: {
                         value: "",
-                        failed: false
+                        failed: false,
+                        tooshort: false,
                     }
-                }
+                },
+                websiteNameTaken: false,
+                websiteCreated: false,
+                websiteFailedMessage: ""
             }
         },
         ready() {
             this.checkLogin();
         },
         methods: {
+            goToWebsite: function() {
+                window.location.href = "http://" + this.websiteData.domain.value + ".the9grounds.io";
+            },
+            createWebsite: function() {
+                if (!this.checkWebsiteData()) {
+                    this.$http.post('/api/website', this.websiteData).then(function(response) {
+                        if (response.text() == "") {
+                            this.$set('websiteCreated', true);
+                        } else {
+                            this.$set('websiteFailedMessage', response.text());
+                            this.$set('websiteCreated', false);
+                        }
+                    });
+                }
+            },
+            checkWebsiteData: function() {
+                var failed = false;
+                if (this.websiteData.name.value == "") {
+                    failed = true;
+                    this.websiteData.name.failed = true;
+                } else {
+                    this.websiteData.name.failed = false;
+                }
+                if (this.websiteData.domain.value == "") {
+                    failed = true;
+                    this.websiteData.domain.failed = true;
+                } else {
+                    this.websiteData.domain.failed = false;
+                }
+                if (this.websiteData.name.value.length < 3) {
+                    failed = true;
+                    this.websiteData.name.tooshort = true;
+                    this.websiteData.name.failed = true;
+                } else {
+                    this.websiteData.name.tooshort = false;
+                    this.websiteData.name.failed = false;
+                }
+                if (this.websiteData.domain.value.length < 3) {
+                    failed = true;
+                    this.websiteData.domain.tooshort = true;
+                    this.websiteData.domain.failed = true;
+                } else {
+                    this.websiteData.domain.tooshort = false;
+                    this.websiteData.domain.failed = false;
+                }
+                return failed;
+            },
+            checkDomain: function() {
+                if (this.websiteData.domain.value.length > 3) {
+                    this.$http.post('/api/checkDomain', this.websiteData).then(function (response) {
+                        if (response.text() == "taken") {
+                            this.$set('websiteNameTaken', true);
+                        } else {
+                            this.$set('websiteNameTaken', false);
+                        }
+                    });
+                }
+            },
             checkLogin: function() {
                 this.$http.get('/api/checkLogin').then(function(response) {
-                    if (response == "true") {
+                    if (response.text() == "true") {
                         this.$set('loggedIn', true);
                     } else {
                         this.$set('loggedIn', false);
@@ -188,13 +294,29 @@
                 return this.register = ! this.register;
             },
             registerSend: function() {
-                if (this.checkRegisterData()) {
-
+                if (!this.checkRegisterData()) {
+                    this.$http.post('/api/register', this.registerData).then(function(response) {
+                        if (response.text() == "") {
+                            this.$set('loggedIn', true);
+                        } else {
+                            this.$set('registerFailedMessage', response.json());
+                        }
+                    });
                 }
             },
             loginSend: function() {
-                if (this.checkLoginData()) {
-
+                if (!this.checkLoginData()) {
+                    console.log("send");
+                    this.$http.post('/api/login', this.loginData).then(function(response) {
+                        console.log(response);
+                        if (response.text() == '') {
+                            this.$set('loggedIn', true);
+                        } else {
+                            this.$set('loginFailedMessage', response.json());
+                        }
+                    });
+                } else {
+                    console.log("failed");
                 }
             },
             checkLoginData: function() {
@@ -240,6 +362,13 @@
                     this.registerData.confirm_password.failed = false;
                 }
                 return failed;
+            }
+        },
+        events: {
+            loggedIn: function(data) {
+                if (data) {
+                    this.checkLogin();
+                }
             }
         }
     }

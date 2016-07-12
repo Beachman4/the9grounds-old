@@ -1,3 +1,5 @@
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
 body {
   height: 100%;
   width: 100%;
@@ -7,7 +9,7 @@ body {
 p, h1, h2, h3, h4, h5, label, button, small, span, a {
   //font-family: 'Roboto Slab', serif !important;
   font-family: 'Montserrat', sans-serif !important;
-  color: #00234F !important;
+  color: #00234F;
 }
 .top-bar {
   //background-color: #000D20 !important;
