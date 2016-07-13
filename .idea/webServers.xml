@@ -7,6 +7,7 @@
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
       <webServer id="399bc8ce-d279-47ef-9080-5886245d24b3" name="the9grounds" url="http://the9grounds.com">
@@ -14,6 +15,7 @@
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
       <webServer id="341773f3-61d3-4148-958b-8d06940ad3f5" name="american" url="http://americanbakeware.com">
@@ -21,6 +23,7 @@
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
       <webServer id="68417495-b75d-41e4-ab61-2727822175f1" name="secured" url="http://securedserver.net">
@@ -28,6 +31,7 @@
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
       <webServer id="78d0abcc-de4d-4290-a870-b4ef9bdf3546" name="gitlab" url="http://10.0.0.11">
@@ -35,6 +39,7 @@
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
       <webServer id="8c6e2380-3e28-4c83-9386-bc29642fec23" name="atlascredit" url="http://groupm7.com">
@@ -42,6 +47,15 @@
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="3ea8a8a3-9158-4e6a-bc47-40d85ec6237c" name="atlas" url="http://atlascredit.com">
+        <fileTransfer host="atlascredit.com" port="22" accessType="SFTP" password="df9ddf87dfe5dfe4dfefdf81dfdddfcfdfc8df81dfeddff8dfe5dfffdffadf87df9d" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
         </fileTransfer>
       </webServer>
     </option>

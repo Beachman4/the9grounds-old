@@ -297,6 +297,7 @@
                 if (!this.checkRegisterData()) {
                     this.$http.post('/api/register', this.registerData).then(function(response) {
                         if (response.text() == "") {
+                            this.$dispatch('loggedIn', true);
                             this.$set('loggedIn', true);
                         } else {
                             this.$set('registerFailedMessage', response.json());
@@ -310,6 +311,7 @@
                     this.$http.post('/api/login', this.loginData).then(function(response) {
                         console.log(response);
                         if (response.text() == '') {
+                            this.$dispatch('loggedIn', true);
                             this.$set('loggedIn', true);
                         } else {
                             this.$set('loginFailedMessage', response.json());
