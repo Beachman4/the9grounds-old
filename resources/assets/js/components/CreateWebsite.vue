@@ -224,7 +224,7 @@
         },
         methods: {
             goToWebsite: function() {
-                window.location.href = "http://" + this.websiteData.domain.value + ".the9grounds.io";
+                window.location.href = "http://" + this.websiteData.domain.value + ".the9grounds.com";
             },
             createWebsite: function() {
                 if (!this.checkWebsiteData()) {

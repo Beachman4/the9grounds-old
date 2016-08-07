@@ -14605,7 +14605,7 @@ exports.default = {
 
     methods: {
         goToWebsite: function goToWebsite() {
-            window.location.href = "http://" + this.websiteData.domain.value + ".the9grounds.io";
+            window.location.href = "http://" + this.websiteData.domain.value + ".the9grounds.com";
         },
         createWebsite: function createWebsite() {
             if (!this.checkWebsiteData()) {
