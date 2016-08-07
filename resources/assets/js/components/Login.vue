@@ -31,9 +31,9 @@
                 </div>
                 <div class="modal-footer">
                     <div class="btn-group" role="group" aria-label="Stuff">
-                        <button type="button" class="btn btn-danger-outline" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
-                        <button data-toggle="modal" @click="hideLogin" data-target="#registerModal" type="button" class="btn btn-info-outline">Register</button>
-                        <button type="button" @click="login" class="btn btn-success-outline">Login</button>
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
+                        <button data-toggle="modal" @click="hideLogin" data-target="#registerModal" type="button" class="btn btn-outline-info">Register</button>
+                        <button type="button" @click="login" class="btn btn-outline-success">Login</button>
                     </div>
                 </div>
             </div>

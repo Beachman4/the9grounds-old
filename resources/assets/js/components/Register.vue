@@ -56,9 +56,9 @@
                 </div>
                 <div class="modal-footer">
                     <div class="btn-group" role="group" aria-label="Stuff">
-                        <button type="button" class="btn btn-danger-outline" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
-                        <button v-if="!registerDone" data-toggle="modal" @click="hideRegister" data-target="#loginModal" type="button" class="btn btn-info-outline">Login</button>
-                        <button v-if="!registerDone" type="button" @click="register" class="btn btn-success-outline">Register</button>
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
+                        <button v-if="!registerDone" data-toggle="modal" @click="hideRegister" data-target="#loginModal" type="button" class="btn btn-outline-info">Login</button>
+                        <button v-if="!registerDone" type="button" @click="register" class="btn btn-outline-success">Register</button>
                     </div>
                 </div>
             </div>
