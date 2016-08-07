@@ -123,7 +123,7 @@
                                         <label class="form-control-label" for="domain">Website Domain</label>
                                         <p style="color: red" v-if="websiteData.domain.value != '' && websiteNameTaken">Website name is unavailable.</p>
                                         <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-check" style="color: green" v-if="!websiteNameTaken"></i><i style="color: red;" class="fa fa-times-circle" v-else></i></span>
+                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-question" v-if="websiteData.domain.value.length == 0gu"></i><i class="fa fa-check" style="color: green" v-if="websiteData.domain.value.length > 1 && !websiteNameTaken"></i><i style="color: red;" class="fa fa-times-circle" v-if="websiteNameTaken"></i></span>
                                             <input type="text" class="form-control form-control-danger" name="domain" id="domain" v-model="websiteData.domain.value" v-on:keyup="checkDomain">
                                             <span class="input-group-addon">.the9grounds.com</span>
                                         </div>

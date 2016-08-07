@@ -1,5 +1,5 @@
 import Vue from 'vue';
-require('bootstrap');
+require('../../../node_modules/bootstrap/dist/js/bootstrap.min.js');
 import resource from 'vue-resource';
 import VueRouter from 'vue-router';
 Vue.use(resource);
