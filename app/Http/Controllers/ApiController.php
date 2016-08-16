@@ -64,7 +64,7 @@ class ApiController extends Controller
         } else {
             $website = new Website();
             $website->name = $name;
-            $website->domain = $domain . ".the9grounds.io";
+            $website->domain = $domain;
             $website->owner = \User::Get()->id;
             $website->save();
         }
