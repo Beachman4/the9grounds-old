@@ -53,8 +53,8 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-primary-outline" @click="changeRegister">Login</button>
-                                            <button type="button" class="btn btn-success-outline" @click="registerSend">Register</button>
+                                            <button type="button" class="btn btn-outline-primary" @click="changeRegister">Login</button>
+                                            <button type="button" class="btn btn-outline-success" @click="registerSend">Register</button>
                                         </div>
                                     </div>
                                 </div>
@@ -90,8 +90,8 @@
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="btn-group" role="group">
-                                            <button type="button" class="btn btn-primary-outline" @click="changeRegister">Register</button>
-                                            <button type="button" class="btn btn-success-outline" @click="loginSend">Login</button>
+                                            <button type="button" class="btn btn-outline-primary" @click="changeRegister">Register</button>
+                                            <button type="button" class="btn btn-outline-success" @click="loginSend">Login</button>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                                         <label class="form-control-label" for="domain">Website Domain</label>
                                         <p style="color: red" v-if="websiteData.domain.value != '' && websiteNameTaken">Website name is unavailable.</p>
                                         <div class="input-group">
-                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-question" v-if="websiteData.domain.value.length == 0gu"></i><i class="fa fa-check" style="color: green" v-if="websiteData.domain.value.length > 1 && !websiteNameTaken"></i><i style="color: red;" class="fa fa-times-circle" v-if="websiteNameTaken"></i></span>
+                                            <span class="input-group-addon" id="basic-addon1"><i class="fa fa-question" v-if="websiteData.domain.value.length <= 3"></i><i class="fa fa-check" style="color: green" v-if="websiteData.domain.value.length > 3 && !websiteNameTaken"></i><i style="color: red;" class="fa fa-times-circle" v-if="websiteNameTaken"></i></span>
                                             <input type="text" class="form-control form-control-danger" name="domain" id="domain" v-model="websiteData.domain.value" v-on:keyup="checkDomain">
                                             <span class="input-group-addon">.the9grounds.com</span>
                                         </div>
@@ -138,14 +138,14 @@
                                 <h5>You're all done!</h5>
                                 <p>Your website is now created.  Please click the link below to go to it.</p>
                             </div>
-                            <button type="button" @click="goToWebsite" class="btn btn-primary-outline">Go To Website</button>
+                            <button type="button" @click="goToWebsite" class="btn btn-outline-primary">Go To Website</button>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <div class="btn-group" role="group" aria-label="Stuff">
-                        <button type="button" class="btn btn-danger-outline" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
-                        <button type="button" @click="createWebsite" v-if="loggedIn" class="btn btn-success-outline" :disabled="websiteButton">Create Website</button>
+                        <button type="button" class="btn btn-outline-danger" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">Close</span></button>
+                        <button type="button" @click="createWebsite" v-if="loggedIn" class="btn btn-outline-success" :disabled="websiteButton">Create Website</button>
                     </div>
                 </div>
             </div>
@@ -224,7 +224,7 @@
         },
         methods: {
             goToWebsite: function() {
-                window.location.href = "http://" + this.websiteData.domain.value + ".the9grounds.io";
+                window.location.href = "http://" + this.websiteData.domain.value + ".the9grounds.com";
             },
             createWebsite: function() {
                 if (!this.checkWebsiteData()) {
@@ -252,7 +252,7 @@
                 } else {
                     this.websiteData.domain.failed = false;
                 }
-                if (this.websiteData.name.value.length < 3) {
+                if (this.websiteData.name.value.length <= 3) {
                     failed = true;
                     this.websiteData.name.tooshort = true;
                     this.websiteData.name.failed = true;
@@ -260,7 +260,7 @@
                     this.websiteData.name.tooshort = false;
                     this.websiteData.name.failed = false;
                 }
-                if (this.websiteData.domain.value.length < 3) {
+                if (this.websiteData.domain.value.length <= 3) {
                     failed = true;
                     this.websiteData.domain.tooshort = true;
                     this.websiteData.domain.failed = true;
