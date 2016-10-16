@@ -17,7 +17,7 @@ class CreatePasswordResetTable extends Migration
             $table->string('token');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 
