@@ -14,6 +14,7 @@ class UpdatePasswordResets extends Migration
     {
         Schema::table('password_resets', function(Blueprint $table) {
             $table->renameColumn("user_id", "users_id");
+            $table->foreign('users_id')->references('id')->on('users');
         });
     }
 
